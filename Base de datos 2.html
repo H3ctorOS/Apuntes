@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+
+<html>
+
+<head><!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+		<title> Apuntes Base datos 2 </title>     
+
+
+		<meta charset="UTF-8">
+		<meta name="author" content="Hector Montesdeoca">
+		<meta name="description" content="Mis apuntes pal examen de HTML">
+
+		<link rel="stylesheet" type="text/css" href="EstilosGuapos.css">
+
+ </head><!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+<body><!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+
+
+<!--  ========================================    Cabecera   ======================================================== -->
+	<header>
+		
+		<h1> APUNTES DE BASE DATOS 2 </h1>  
+
+				<img src="Fotos/Oracle logo.jpg" alt="Logo HTML"><br> 
+				<h2>  Bases de tados SQL Oracle </h2>    
+				<a href ="https://www.oracle.com/es/database/technologies/appdev/sqldeveloper-landing.html"> Estandar oficial  SQL  </a><br>	
+
+
+
+	 </header> 
+
+
+<!--  ========================================    Menu navegacion   ================================================== -->
+	<nav>  
+
+		<h2>  <a href ="index.html"> Menu </a> </h2>    
+				
+	 </nav>
+
+<!--  ========================================    UF2   ====================================================== -->
+
+	<section> <h1>UF2 SQL</h1>
+
+		<article><h2> DDL <i>Lenguaje de definicion de datos</i></h2>
+
+			<h3>Crear base datos</h3>
+				<p class="comandos"><b>CREATE DATABASE</b> alumnos;</p>
+
+			<h3> Crear tablas</h3>
+				<p> Nombre maximo de 30 caracteres</p>
+				<p class="comandos">
+					<b>CREATE TABLE</b> municipios(<br>
+					id INT <b>PRIMARY KEY</b>,<br>
+					nombre CHAR(20)<b>NOT</b> NULL,<br>
+					poblacion INT <b>DEFAULT</b> 1000,<br>
+					)<b>;</b>
+				</p>
+
+			<h3>Borrar tablas</h3>
+				<p class="comandos"> <b>DROP TABLE</b> alumnos:</p>
+
+
+			<h3>Modificar tabla</h3>
+				<p class="comandos"> 
+					<b>ALTER TABLE</b>alumnos { <br>
+					<b>ADD</b> columna,
+					<b>MODIFY/ CHANGE </b>(column) ,<br>
+					<b>DROP COLUMN</b> (column),<br>
+					<b>ADD CONSTRAINT</b>  restriccion,<br>
+					<b>DROP CONSTRAINT</b>  restriccion,<br>
+					<b>DISABLE CONSTRAINT</b>  restriccion,<br>
+					<b>ENABLE CONSTRAINT</b> restriccion,<br>
+					}<br>
+				</p>
+
+				<p class="comandos"><b>ALTER</b> municipios <b>MODIFY</b> id <b>INT</b> auto_increment;</p>
+
+
+			<h3>Restricciones</h3>
+				<ul>
+					<li><b>PRIMARY KEY</b> Clave primaria </li>
+					<li><b>FOREIGN KEY</b> Clave ajena </li>
+					<li><b>NOT NULL</b> Columnas no nulas</li>
+					<li><b>DEFAULT</b> Valores por defecto </li>
+					<li><b>CHECK</b> Verificador de condiciones</li>
+					<li><b>UNIQUE</b> Valor unico</li>
+				</ul>
+
+				<p><p class="comandos"> 
+					<b>CONSTRAINT</b> id_alumnos_FK <b>FOREIGN KEY</b> ( id_alumno) <b>REFERENCES</b> alumnos(id_alumno)
+
+
+
+				</p>
+
+
+			<h3>Datos standar SQL</h3>
+
+				<table>
+					<tr>
+						<th>TEXTO</th>
+						<th> Estandar SQL</th>
+						<th> ORACLE</th>
+					</tr>
+
+					<tr>
+						<td>anchura fija</td>
+						<td> CHARACTER(n), CHAR(n)  </td>
+						<td> CHAR(n)</td>
+					</tr>
+
+					<tr>
+						<td>Anchura variable</td>
+						<td>CHARTER VARING(n), VARCHER(n)</td>
+						<td>VARCHAR(n)</td>
+					</tr>
+
+					<tr>
+						<td>Anchura fija Caracteres nacionales</td>
+						<td>NCHAR(n) y otros</td>
+						<td>NCHAR(n) </td>
+					</tr>
+
+					<tr>
+						<td>Anchura variable caracteres nacionales</td>
+						<td> NCHAR VARYING(n)</td>
+						<td>NVARCHAR2(n)</td>
+					</tr>
+
+				 </table>
+					<br>
+
+				<table>
+					<tr><th>NUMEROS</th>	<th> Estandar SQL</th>	<th> ORACLE</th></tr>
+
+					<tr><td>Enteros 2bytes</td>			<td>SMALLINT</td>			<td></td></tr>
+					<tr><td>enteros 4bytes</td>			<td>INTEGER, INT</td>		<td></td></tr>
+					<tr><td>Largos 8 bytes</td>			<td>BEGINT</td>				<td></td></tr>
+					<tr><td>Enteros decimal</td>		<td></td>					<td>NUMBER(n)</td></tr>
+					<tr><td>coma flotante</td>			<td>FLOAT, DOUBLE, REAL</td>			<td></td></tr>
+					<tr><td>decimal coma fija</td>		<td>NUMERIC(m,d), DECIMAL(m,d)</td>			<td>NUMBER(m,d)</td></tr>
+
+				 </table>
+
+				<br>
+				<table>
+					<tr><th>FECHAS</th>	<th> Estandar SQL</th>	<th> ORACLE</th></tr>
+
+					<tr><td>Fechas</td>			<td>DATE</td>			<td>DATE</td></tr>
+					<tr><td>Fecha y hora</td>			<td>TIMESTAMP</td>			<td>TIMESTAMP</td></tr>
+
+				 </table>
+					<br>
+
+				 <table>
+					<tr><th>BOLEANO Y BINARIOS</th>	<th> Estandar SQL</th>	<th> ORACLE</th></tr>
+
+					<tr><td>Logico</td>			<td>BOOLEAN, BOOL</td>			<td></td></tr>
+					<tr><td>Binarios</td>			<td>BIT, BIT VARYING(n), VARBIT(n)</td>			<td></td></tr>
+
+
+				 </table>
+
+				 <br>
+
+				<table>
+					<tr><th>DATOS GRAN TAMAÑO</th>	<th> Estandar SQL</th>	<th> ORACLE</th></tr>
+
+					<tr><td>Texto gran longitud</td>			<td>CHARACTER LARGE OBJECT, CLOB</td>			<td>LONG, CLOB</td></tr>
+					<tr><td>Binario gran longitud</td>			<td>BINARY LARGE OBJET, BLOB</td>			<td>RAW, LONG RAW, BLOB</td></tr>
+
+
+				 </table>
+
+
+			<h3> Montras datos </h3>	 
+
+				<p class="comandos"> 
+					<b>SHOW </b>databases; <br>
+					<b>SHOW</b> tables; <br>
+					<b>DESCRIBE</b> alumnos; <br>
+
+
+
+			<h3> Usar base de datos</h3>
+				<p class="comandos"> 
+					<b> USE</b> ilerna;
+				
+
+
+		 </article>
+		
+		<article><h2>DML <i> Lenguaje manipulacion de datos</i></h2>
+
+
+			<h3> Insercion </h3>
+				<p class="comandos"> <b>INSERT INTO</b> municipios (id, nombre, poblacion) <b>VALUES</b> (11, “Valencia”, 794000);<br>
+				<b>INSERT INTO</b> municipios <b>VALUES</b> (12, “Málaga”, 574000);</p>
+
+
+
+			<h3> Modificacion</h3>
+				<p class="comandos"> 
+					<b>UPDATE</b> nombre_tabla<br>
+					<b>SET</b> columna1 = valor1, columna2 = valor2,...<br>
+					<b>WHERE</b> condicion; </p>
+				<p class="comandos"> <b>UPDATE</b> municipios <b>SET</b> poblacion = 800000 <b>WHERE</b> id = 11;</p>
+				
+				<p class="comandos"> <b>UPDATE</b> jugador <b>SET</b> edad= <b>TIMESTAMPDIFF</b>(YEAR, fecha_naci, CURDATE())</b>
+
+
+
+			<h3> Eliminacion</h3>
+				<p class="comandos"> <b>DELETE FROM</b> municipios <b>WHERE</b> id = 13;</p>
+				<p class="comandos"> <b>TRUNCATE</b> municipios; <i>/*Elimina todos los registros de la tabla*/</i></p>
+				<p class="comandos"> <b>TRUNCATE</b> tabla_jugadores <b>WHERE</b> nombre_jugador <b>LIKE</b> '%Fabre%'; </p>
+				
+
+
+
+			<h3> SELECT simples</h3>
+
+				<p class="comandos"> <b>SELECT</b> * <b>FROM</b> municipios;</p>
+				<p class="comandos"> <b>SELECT</b> nombre <b>FROM</b> municipios; </p>
+
+
+
+			<h3>SELECT con resticcion y orden</h3>
+				<p class="comandos"> <b>SELECT</b> nombre, poblacion <b>FROM</b> municipios <b>WHERE</b> poblacion> 600000;</p>
+
+				<p class="comandos"> <b>SELECT</b> id, nombre <b>FROM</b> municipios<b>ORDER BY</b> poblacion ASC;</p>
+
+				<p class="comandos"> <b>SELECT</b> nombre, poblacion <b>FROM</b> municipios <b>WHERE</b> poblacion> 600000 <b>ORDER BY</b> poblacion <b>ASC</b>;</p>
+
+
+
+			<h3>Seleccion clausulas de agrupacion</h3>
+				<p class="comandos"> Se hace con la sentencia <b>GROUP BY</b></p>
+					<ul>
+						<li><b>COUNT</b> devuelve cantidad de registros </li>
+						<li><b>MAX</b> valor maximo de registros en el campo seleccionado</li>
+						<li><b>MIN</b> valor minimo de registros en el campo seleccionado </li>
+						<li><b>SUM</b> suma de los registros en el campo seleccionado </li>
+						<li><b>AVG</b> media de los campos </li>
+					
+					</ul>
+
+				<p class="comandos"> 
+					<b>SELECT </b> nivel, Count(*) <br>
+					<b>FROM </b> cursos<br>
+					<b>GROUP BY </b> nivel;<br>
+				</p>
+
+
+
+			<h3>SELECT de mas de una tabla</h3>
+				<p class="comandos"> 
+					<b>SELECT</b> e.nombre, e.apellidos, d.nombre<br>
+					<b>FROM</b> empleado e, departamento d<br>
+					<b>WHERE</b> d.cod=e.dep <b>AND</b> e.nombre=”JUAN” <b>AND</b> e.apellido= “PEREZ”;
+				</p>
+
+
+
+			<h3> Subconsultas</h3>
+				<p class="comandos"> 
+					<b>SELECT</b> cSignatura<br>
+		  			<b>FROM</b> TPrestamo<br>
+		  			<b>WHERE</b> Cnif = (SELECT Cnif FROM</b> TSocio <b>WHERE</b> cApellidos = “Robinson González” <b>AND</b> cNombre = “Paula”);
+				 </p>
+
+
+			<h3> Unir dos SELECT a lo bruto </h3>
+				<p class="comandos"> Se hace con <b>UNION</b>.<br>
+					-Las Consultas deben tener el mismo numero de campos con los mismos tipos de datos y en el mismo orden<br>
+					-Solo selecciona los valores distintos para los campos seleccionados. Si queremos todos los datos hay que usar <b> UNION ALL</b></p>
+
+
+				<p class="comandos">
+					<b>SELECT</b> * <b>FROM</b> ALUMNOS <b>WHERE</b> FECHA_NACIMIENTO <=’1970-01-01’<br>
+					<b>UNION</b><br>
+					<b>SELECT </b>* <b>FROM</b> ALUMNOS <b>WHERE</b> FECHA_NACIMIENTO >=’1980-01-01’;
+				</p>
+
+
+
+			<h3> Unir dos SELECT guapo </h3>
+
+				<h4> <b> INNER JOIN</b> </h4>
+					<p>Calcula la interseccion de dos tablas </p>
+					<p class="comandos">
+						<b>SELECT</b> columna(s)<br>
+						<b>FROM</b> tabla1<br>
+						<b>INNER JOIN</b> tabla2<br>
+						<b>ON</b> tabla1.columna = tabla2.columna;
+					 </p>
+
+
+				<h4> <b>LEFT JOIN</b> </h4>
+					<p> Pone todos los registros de la primera tabla elegida y los que cuadren de la segunda</p>
+
+					<p class="comandos">
+						<b>SELECT</b> e.nombre_emp, <b>AS</b>'Empleado', d.nombre_dept <b>AS</b> 'Departamento'<br>
+						<b>FROM</b> empleados e<br>
+						<b>LEFT JOIN</b> Departamentos d<br>
+						<b>ON</b> e.id_departamento = d.id_dept;
+
+
+
+				<h4> <b>RIGHT JOIN</b> </h4>
+					<p> Pone todos los registros de la segunda  tabla elegida y los que cuadren de la segunda</p>
+
+					<p class="comandos">
+						<b>SELECT</b> e.nombre_emp, <b>AS</b>'Empleado', d.nombre_dept <b>AS</b> 'Departamento'<br>
+						<b>FROM</b> empleados e<br>
+						<b>RIGHT JOIN</b> Departamentos d<br>
+						<b>ON</b> e.id_departamento = d.id_dept;
+
+
+			<h3> Opciones en los SELECT</h3>		
+				<h4>DISTINCT</h4>		
+					<p class="comandos"> <b>SELECT DISTINCT </b> posicion <b> FROM</b>  jugador <b>ORDER BY</b> posicion <b>DESC</b>;
+
+				<h4> HAVING</h4>
+					<p class="comandos">
+						<b>SELECT COUNT</b>(idConsumidor), Pais<br>
+						<b>FROM</b> Consumidores<br> 
+						<b>GROUP BY</b> Pais<br>
+						<b>HAVING COUNT</b>(idConsumidor) > 5;<br>
+					 </p>
+
+
+		 </article>
+
+		<article><h2>VISTAS</i></h2>
+
+			<h3>Creacion</h3>
+				<p class="comandos"> 
+					<b>CREATE</b> [OR REPLACE] [FORCE|NOFORCE] <b>VIEW</b> nombre_vista [lista_columnas] <b>AS</b> sentencia_select<br>
+					[<b>WITH CHECK OPTION</b> [<b>CONSTRAINT</b> restricción]]br>
+					[<b>WITH READ ONLY</b> [<b>CONSTRAINT</b> restricción]]
+				</p>
+
+				<p class="comandos"> 
+					-<b>OR REPLACE</b> si la vista ya existe la sobreescribe<br>
+					-<b>FORCE</b> crea la vista aunque no se disponga de todos los datos necesarios<br>
+					-<b>WITH CHECK OPTION</b>  ofrece la posibilidad de añadir <b>INSERT</b><br>
+					-<b>WITH READ ONLY</b> solo lectura
+				</p>
+
+				<h4>Vista simple</h4>
+					<p class="comandos">
+						<b>CREATE OR REPLACE VIEW</b> vista_ejemplo_ropa<br>
+						<b>AS	SELECT</b> nombre, apellidos<br>
+							&nbsp;&nbsp;<b>FROM</b> empleados<br>
+							&nbsp;&nbsp;<b>WHERE</b> depot = ropa;
+						</p>
+
+				<h4>Vista compleja</h4>
+					<p class="comandos">
+						<b>CREATE OR REPLACE VIEW</b> V_alum_aprobados<br> <b>AS</b><br>
+						<b>SELECT</b><br>
+							&nbsp;&nbsp;a.documento,<br>
+							&nbsp;&nbsp;a.nombre <b>AS</b> nombreAlumno,<br>
+							&nbsp;&nbsp;a.codi_profe,<br>
+							&nbsp;&nbsp;p.nombre <b>AS</b> nombreProfe,<br>
+							&nbsp;&nbsp;a.nota,<br>
+						<b>FROM</b><br>
+							&nbsp;&nbsp;alumnos <b>AS</b> a<br>
+						<b>INNER JOIN</b><br>
+							&nbsp;&nbsp;profesores <b>AS</b> p <br>
+						<b>ON</b> a.codigoprofe = p.codigo<br>
+						<b>WHERE</b> nota >=7;
+					</p>
+
+
+			<h3>Borrado</h3>
+				<p class="comandos"><b>DROP VIEW</b>  [IF EXISTS] nombre_vista; </p>
+
+
+
+			<h3> <b>INSERT</b> en una lista</h3>
+				<p class="comandos"> <b>INSER INTO</b> vista_alumnos_aprobados(doc, nombre , nota, codigo)<br>
+					<b>VALUES</b> ('9999','pepe',10,1)</p>
+
+
+			<h3> <b>UPDATE</b> en una lista</h3>
+				<p class="comandos"> <b>UPDATE</b> vista_alumnos<br>
+					<b>SET</b> nota = 10;<br>
+					<b>WHERE</b> documento = '345325';</p>
+
+ 		 </article>
+
+		<article><h2>TRANSACCIONES</i></h2>
+			<h3> Sentencia</h3>
+
+				<h4> Comienza con</h4>
+					<p class="comandos">
+						<b>BEGIN</b><br>
+						<b>STAR TRANSACTION</b>
+					 </p>
+
+				<h4> Acaba con</h4>
+					<p class="comandos">
+						<b>COMMIT</b><br>
+						<b>ROLLBACK</b>
+
+					</p>
+
+				<p class="comandos">
+					<b>START TRANSACTION</b>;<br>
+					<b>UPDATE</b> municipios <b>SET</b> nombre = “Montpellier” <b>WHERE</b> id=130;<br>
+					<b>UPDATE</b> municipios <b>SET</b> nombre = “Pontevedra” <b>WHERE</b> id=120;<br>
+					<b>COMMIT</b>;
+				</p>
+
+
+
+		 </article>
+
+	</section>
+
+
+
+
+
+
+<!--  ========================================    UF3   ====================================================== -->
+	<section>	 <h1> UF3 ORACLE SQL</h1><hr>
+
+	 	<article>  <h2>Usuarios</h2>
+
+
+		 	<h3>Sentencia importante</h3>
+			 		<p>Cambia ajustes de la sesion que se tenga abierta para poder crear y modificar usuarios<br>
+			 			 <i class="comandos"><b> ALTER SESSION SET </b> "_oracle_script" = <b> true </b></i>;
+			 		 </p>
+		 		
+
+		 	<h3>Caracteristicas</h3>
+		 		 		<ul>
+		 		 			<li><b>Nombre</b>Maximo 30 caracteres. Especiales solo $ y _</li>
+		 		 			<li><b>Configuracion fisica</b> espacio para almacenar informnacion el <b>Tablespace</b></li>
+		 		 			<li><b>Perfil asociado</b> recursos de los que dispone en el sistema</li>
+		 		 			<li><b>Privilegios yt roles</b></li>
+		 		 		</ul>
+
+
+		 	<h3>Creacion y borrado</h3>
+			 			<ul> 
+			 				<li>Lo basico para crear es meterle el nombre de usiario y la clave:<br>
+			 			 		<i class="comandos"> <b>CREATE USER</b>	ilerna 	<b>IDENTIFIED BY</b> 1234 ; </i> <br><br>
+							</li>
+
+			 				<li> Para borrar es con el drop y si se nmecesita el cascade:<br>
+ 								<i class="comandos"> <b>DROP USER</b>	ilerna 	; </i>  <br>
+			 					<i class="comandos"> <b>DROP USER</b>	ilerna 	<b>CASCADE</b> ;</i>
+			 				</li>	
+			 			</ul>
+		 			
+
+		 	<h3>Opciones en la creacion </h3>
+
+		 			<p> <i class="comandos"> <b>CREATE USER</b>	ilerna 	<b>IDENTIFIED BY</b> 1234 [opciones]; </i> <br><br>
+
+		 				-[<i class="comandos" >DEFAULT TABLESPACE </i> nombre] <br>
+		 				-[<i class="comandos" >TEMPORARY TABLESPACE </i> nombre] <br>
+		 				-[<i class="comandos" >QUOTA </i>(meter la cantidad como por ejemplo: 15M o UNLIMITED) nombre <i class="comandos" > ON </i> Tablespace] <br>
+		 				-[<i class="comandos" >PASSWORD EXPIRED </i> nombre] <br>
+		 				-[<i class="comandos" >ACCOUNT (UNLOCK o LOCK) </i> nombre] <br>
+
+		 			</p>
+
+
+		 	<h3>STATUS de la cuenta</h3>
+		 		 	<ul>
+		 		 		<li><b>Open</b>= es accesible</li>
+		 		 		<li><b>EXPIRED</b>= a agotado el tiempo maximo, acceso denegado</li>
+		 		 		<li><b>EXPIRED GRACE</b> cuenta caducada pero siguie siendo accesible. X dias para cambiar la clave</li>
+		 		 		<li><b>LOCKED </b> bloqueada por el admin</li>
+		 		 		<li><b>LOCKED TIMED</b> bloqueada por tiempo. Por intentos de conexion fallidos.</li>
+		 		 		<li><b>EXPIRED & LOCKED</b> ha caducado y bloqueada por el admin</li>
+		 		 	</ul>
+ 	
+
+		 	<h3>Modificar</h3>
+			 		<p> Se usa la sentencia <b> ALTER </b>, en el ejemplo se le bloquea la  cuenta a ilerna:<br>
+			 			 <i class="comandos"><b>ALTER USER </b>	ilerna 	<b>ACCOUNT LOCK</b>   ; </i>
+			 			 <br>
+			 			 <i class="comandos"> <b>ALTER USER</b> 'mrobinson'@'localhost' <b>IDENTIFIED WITH</b> sha256_password <B>BY</B> 'new_password' <B>PASSWORD EXPIRE INTERVAL 200 DAY</B>;</i>
+
+			 		 </p>
+		 		
+
+		 	<h3>Ver usuarios</h3>
+			 		<p> Se hace con el <b>SELECT</b> :<br>
+			 			 <p class="comandos"><b>SELECT * FROM </b>	DBA_USERS   ;<br>
+			 			 <b>DESC </b>	DBA_USERS   ; </p>
+
+			 		 </p>
+		 		 
+
+		 	<h3>Tablespace</h3>
+			 	Se crea un archivo independiente para cada usuario en donde tiene toda su informacion. Haye que especificar un limite de capacidad para el arvhivo. El sistema este de tablespace por lo visto no se suele usar. </p>
+			 			<ul>
+			 				<li> <p>Creacion:<br>
+			 			 		<i class="comandos"><b>CREATE  TABLESPACE </b>	ilerna	<b>DATAFILE</b> 'ilerna.ora'<b>SIZE</b> 20m <b>AUTOEXTEND ON</b>; </i><br>
+			 			 		En esta sentencia se crea el tablespace ilerna.ora par el usuario ilerna con 20 megas y si se pasa de esos megas se extiende solo. La extension del archivo es indiferente, por defecto es .DBF
+			 			 		</p>
+							</li>
+
+							<li><b>tablespaces por defecto</b>
+								<p>-<b>SYSTEM</b> diccionario de datos<br>
+									-<b>SYSAUX</b> componentes opcionales de la BD<br>
+									-<b>TEMP</b><br>
+									-<b>UNDOTBS1</b> para rollbacks de transcciones<br>
+									-<b>USERS</b><br>
+									
+
+								</p>
+
+							</li>
+
+							<li><p>Borrado:<br>
+								<i class="comandos"><b>DROP  TABLESPACE </b>	ilerna	<b>INCLUDING CONTENTS CASCADE CONSTRAINTS</b>  ; </i>
+								</p>
+							
+							</li>
+
+
+							<li><p>Modificacion:<br>
+								<i class="comandos"><b>ALTER  TABLESPACE </b>	ilerna	<b>ADD DATAFILE</b> 'ilerna2.ora'<b>SIZE</b> 10m <b>AUTOEXTEND ON</b> ; </i>
+								<br>
+								<br>
+								Asignar un tablespace a un usuario:
+								<br>
+								<i class="comandos"><b>ALTER  USER </b>	ilerna	<b>IDENTIFIED BY </b> 1234 <b>DEFAULT TABLESPACE </b> ilerna  ; </i>
+								<br>
+								</p>
+							</li>
+
+							<li><p>Mostrar todos los que hay:<br>
+								<i class="comandos"><b>SELECT </b>	file_name, bytes /1024/1024	<b>FROM</b> dba_data_files ; </i>
+								</p>
+							
+							</li>
+
+							<li><p>Importante para tener espacio al trabajar</p>
+								
+								<p class="comandos"><b>ALTER USER nombre_usuario quota unlimited on nombre_tablespace; </b></p>
+							</li>
+
+
+			 			</ul>
+			 			 		 
+
+		 	<h3>Conectar como un usuario</h3>
+			 		<p> se hace desde los menus del ORACLE. Ojo porque previamente tiene que tener los permisos etc. O por los comandos (Run SQL Command Line)
+			 		 </p>
+		 		 </li>
+
+
+		 	<h3>Privilegios</h3>
+
+			 		 El admin de los permisos etc es el usuario que los crea. <br>
+			 			<h4>Hay tes tipos:</h4>
+			 				<ul>
+			 					<li><b>Privilegios de sistema</b>: permite realizar acciones como : CREATE USER o CREATE TABLE</li>
+			 					<li><b>Privilegios de objetos</b>:un objeto concreto por ejemplo una tabla.</li>
+			 				</ul>
+			 				<br><br>
+			 			<h4> Los permisos se dan con GRANT:</h4>
+
+			 			 		<i class="comandos"><b>GRANT</b> tipo de privilegio (objeto)<b>ON</b> tabla <b>TO </b>	usuario <b>WITH</b>   ; </i><br><br>
+
+			 			 		<i class="comandos"><b>GRANT CREATE SESSION TO </b>	ilerna, tutor, dorector   ; </i><br>
+			 			 		En esta instruccion se le dan permisos de crear sesion (desde el el usiario Sytem) a los usuarios despues del "to".<br>
+			 			 		<br>
+			 			 			 			
+			 			 		<i class="comandos"><b>GRANT ALL PRIVILEGES TO </b>	ilerna ; </i><br>
+			 			 		Se le dan casi todos los permisos al usuario ilerna. Lo mas criticos aun siguen bloqueados.<br>
+			 			 		<br>
+
+			 			 		<i class="comandos"><b>GRANT CREATE TABLE, CREATE VIEW TO </b>	director ; </i><br>
+			 			 		Se le dan casi los permisos de crear tablas y crear vistas al usuario "director".<br>
+			 			 		<br>
+
+			 			<h4>Tipo de privilegio:</h4>
+
+			 				<img src="Fotos\Tipos de privilegios.jpg">
+			 				<br><br>
+			 				
+			 			<h4> Objetos sobre los que puede operar el usuario</h4>
+			 				<table>
+			 				<tr>
+			 					<td>nombre_tabla</td>
+			 					<td>esa tabla</td>
+			 					
+			 				</tr>	
+
+			 				<tr>
+			 					<td>*</td>
+			 					<td>sobre todas las tablas de la BD que se esta usando</td>	
+			 				</tr>
+
+			 				<tr>
+			 					<td>*.*</td>
+			 					<td>sobre todas las tablas de todas las BD</td>
+			 				</tr>
+
+			 				<tr>
+			 					<td>Base_datos.*</td>
+			 					<td>todas las tablas de esa base de datos</td>			 					
+			 				</tr>
+
+			 				<tr>
+			 					<td>Base_datos.nombre_tabla</td>
+			 					<td>esa tabla de esa base de datos</td>			 					
+			 				</tr>	
+			 			
+			 			 </table>
+			 				<br><br>
+
+
+			 			<h4>WITH permite indicar cientas opciones</h4>
+							<img src="Fotos\WITH.JPG">
+			 				<br><br>
+
+			 			 <h4>Se retiran con REVOKE:</h4>
+
+			 				<p class="comandos"><b>REVOKE ALL PRIVILEGES ON</b>  *.* <b> FROM </b> ilerna@localhost ;</p>
+			 				 	
+
+		 	<h3> Autentificacion </h3>
+		 		 	<p> Hay dos formas:<br>
+		 		 		-<b>Por BD</b> la administracion de la cuienta es tipo (Usuario, contrasena) se guarda encriptada u la autentificacion la realiza  Oracle<br>
+		 		 		-<b>Externa</b>	la cuenta la mantiene Oracle. La autentificaion es realizada por el sistema operativo, las claves son las mismas.</p>
+		 		 
+
+		 	<h3>Cuentas predefinidas </h3>
+		 				<p>Por lo visto esto en el examen no cae</p>
+		 			<ul>
+		 				<li><b>SYS</b> Super administrador de la BD (Rol DBA). Se crea el diccionario de datos.</li>
+		 				<li><b>SYSTEM</b> el mismo rol que SYS y viene con una serie de tablas y vistas administrativas.</li>
+		 				<li><b>SYSMAN</b> realiza tareas administrativas usando <i>Enterprise Manager</i></li>
+		 				<li><b>DBSMNP</b> controla la aplicacion <i>Enterprise Manager</i></li>
+
+		 				<br>-Tienen privilegios administrativos para realizar operaciones de alto nivel.
+		 				<li><b>SYSDBA</b> control total sobre la BD</li>
+		 				<li><b>SYSOPER</b> permite al usuario realizar las tareas operativas basicas, pero no puede visualizar datos.</li>
+
+		 				<br>-Cuentas reservadas.
+		 				<li><b>ROOT</b> tiene todos los privilegios de la SGBD</li>
+		 				<li><b>MYSQL.SYS</b> Se usa para definir objetos(vistas procedimientos, funciones) Esta cuenta no acepta conexiones de clientes</li>
+		 				<li><b>MYSQL.SESSION</b> Cuenta usada internamente pos plugins. Esta cuenta no acepta conexiones de clientes</li>
+		 			</ul>
+	
+
+		 	<h3>Acceder a tablas de otro usuario</h3>
+			 		<p> Si no se expecifica nada no se puede acceder a tablas de otros usuarios. Para eso se usa el punto <b>.</b> :<br>
+			 			 <p class="comandos"><b>SELECT * FROM </b>	ilerna.alumnos   ; </p><br>
+			 			 con esta instrucciuon se entra a la tabla alumnos del usuario ilerna. 
+			 		 </p>
+		 		 
+
+		 	<h3>Roles</h3>
+			 		<p> Consiste en crear grupos de permisos:<br>
+			 			<ul>
+			 				<li>Crear:<br>
+			 					<i class="comandos">  <b>CREATE ROLE </b>	DIR_ROL  ;</i><br>	
+			 				 </li><br>
+
+			 				<li>Borrar:<br>
+			 					<i class="comandos">  <b>DROP ROLE </b>	DIR_ROL  ;</i><br>
+
+			 				 </li><br>
+
+			 				<li>Asignar permisos:<br>
+			 					<i class="comandos">  <b>GRANT INSERT, SELECT ON </b>	ALUMNOS <b>TO</b> DIR_ROL  ;</i><br>
+			 						le doy mermisos de insertar y seleccionar a en la tabla ALUMNOS al rol DIR_ROL. <br>
+			 						Se pueden asignar a una tabla o en general:<br>
+			 					<i class="comandos">  <b>GRANT CREATE SESSION, CREATE DATABASE LINK, CREATE TABLE, CREATE VIEW </b>	 <b>TO</b> DIR_ROL  ;</i><br>
+			 				 </li><br>
+
+							<li>Asignar el ROL a alguien:<br>
+			 					<i class="comandos">  <b>GRANT </b>	DIR_ROL  <b>TO</b>  director;</i><br>
+
+			 				 </li>
+
+
+			 			</ul>
+			 		 
+
+	 		
+	 	 </article> <!--  ............Fin lista de usuarios .................... -->
+
+
+	 	<article> <h2>Bloques anonimos</h2>
+
+	 		<h3>Estructura</h3>
+		 		<p> Primero se mete esta instruccion para reservar un espacio para las variables etc en consola: <br>
+		 			<i class="comandos"> <b>set SERVEROUTPUT on size</b> 100000 ;</i> <br>
+		 			Ahora se mete el cuerpo general del bloque, se divide en tres partes: DECLARE, BEGIN, END<br>
+					<i class="comandos"> <b>DECLARE</b></i><br>
+		 			<i class="comandos"> mensaje <b>varchar2(100)</b>:= 'Hola';</i> <br>
+		 			<i class="comandos"> <b>BEGIN</b></i><br>
+		 			<i class="comandos"> DBMS_OUTPUT.PUT_LINE (mensaje);</i> <br>
+		 			<i class="comandos"> <b>END;</b></i><br>
+				</p>
+
+			<h3>Tipos de variables</h3>	
+				<ul>
+					<li><b>Compuesto:</b> tablas, registros, tablas amidadas, arrays</li>
+					<li><b>LOB:</b> graficos, videos, imagenes, texto de hasta 4GB</li>
+					<li><b>Escalar:</b> <br> <img src="Fotos/tipos de datos ESCALAR.JPG"> </li>
+
+				</ul>
+
+			<h3>Concatenar cosas</h3>
+				<p>Se hace poniendo || en medio de las cosas escritas entre '' el texto<br>
+					<i class="comandos"> <b>DBMS_OUTPUT.PUT_LINE</b> ('tonterias de texto: ' || variableX );</i>
+				</p>
+
+			<h3>Operadores</h3>	
+				<table>
+					<tr>	<th>OPERADOR</th>	<th>ACCION</th>  </tr>
+
+					<tr>	<td>**</td>		<td>potencia</td>	</tr>
+					<tr>	<td>*</td>		<td>multiplicacion</td>	</tr>
+					<tr>	<td>+</td>		<td>suma</td>	</tr>
+					<tr>	<td>-</td>		<td>resta</td>	</tr>
+					<tr>	<td>/ </td>		<td>division </td>	</tr>
+					<tr>	<td> =, !=</td>		<td>igual, distinto </td>	</tr>
+					<tr>	<td>< , > </td>		<td>menos que, mayor que </td>	</tr>
+					<tr>	<td><=, >= </td>		<td>menor  o igual que, mayor o igual que </td>	</tr>
+					<tr>	<td> <> </td>		<td> distinto que</td>	</tr>
+					<tr>	<td> IS NULL</td>		<td> es nulo</td>	</tr>
+					<tr>	<td>LIKE BETWEEN</td>		<td>como entre </td>	</tr>
+					<tr>	<td>IN</td>	<td>en</td>	</tr>
+
+
+					
+
+
+
+
+				</table>
+
+			<h3>Declarar cosas</h3>
+				<p> A parte de poner la variable y ya esta, se pueden declarar con valores de fabrica, que no sea nulo, que sea constante etc.<br>
+					<i class="comandos">
+					v_fecha <b>DATE</b>;<br>
+					v_deptno <b>NUMBER</b> (2) <b>NOT NULL</b> := 10;<br>
+					v_lugar <b>VARCHAR </b>(13)<b> DEFAULT</b> 'SICILIA'<br>
+					c_altura <b>CONSTANT NUMBER</b> := 1.72; </i>
+				</p>
+
+
+
+			<h3>Meter en una variable el resultado de una consulta</h3>
+				<p class="comandos"> Ojo, la colsulta solo puede dar un resultado.En esta caso se mete la edad:<br>
+					<i ><b>BEGIN</b><br>
+					dni_alumno := '4444444';<br>
+					<b>SELECT</b> edad <b>INTO</b> edad_alumno<br>
+					<b>FROM</b> alumnos<br>
+					<b>WHERE</b> DNI = dni_alumnos;</i>
+				</p>
+
+
+
+			<h3>Pedir un INPUT al usuario </h3>
+				<p> es con el simbolo <b>&</b> delante de la variable:<br>
+					<i class="comandos">v_edad := <b>&</b>Edad ;</i></p>
+				<p>El super Oracle aunque este dentro del bucle solo lo pide una vez</p>
+
+
+
+
+			<h3>IF ELSE </h3>
+				<p class="comandos"> <i >
+					<b>IF</b> edad <b>BETWEEN</b> 1 <b>AND</b> 12 <b>THEN</b><br>
+					&nbsp; codigo;<br>
+					<b>ELDIF</b> edad <b>BETWEEN</b> 18 <b>AND</b> 90 <b>THEN</b><br>
+					&nbsp;otro codigo;<br>
+					<b>ELDIF</b> edad <b>BETWEEN</b> 91 <b>AND</b> 115 <b>THEN</b><br>
+					&nbsp;mas coooodigo;<br>
+					<b>ELSE</b> <br>
+					&nbsp;resto del codigo coooodigo;<br>
+					<b>END IF ;</b>
+				</i></p>
+				<p>ooojo muy importante acabar con el END IF</p>
+
+
+
+
+
+			<h3>Switch CASE</h3>
+				<p> ejemplo del case usando el <i id="resaltado">SUBSTR</i> que es para sacar las letras de un VARCHAR, en este caso saca las letras de la 1 hasta la 2. El puto Oracle no empieza desde 0 empieza por 1</p>
+				<p class="comandos">
+					<b>CASE</b> SUBSTR (v_dia, 1,2)<br>
+					 &nbsp;<b>WHEN</b> 'LU' <b>THEN </b><br>
+						&nbsp;&nbsp;<i> metemos codigo ;<i><br>
+					&nbsp;<b>WHEN</b> 'MA' <b>THEN </b><br>
+						&nbsp;&nbsp;<i> metemos codigo; <i><br>
+					&nbsp;<b>WHEN</b> 'MI' <b>THEN </b><br>
+						&nbsp;&nbsp;<i> metemos codigo ;<i><br>
+					&nbsp;<b>WHEN</b> 'JU' <b>THEN </b><br>
+						&nbsp;&nbsp;<i> metemos codigo; <i><br>
+					&nbsp;<b>WHEN</b><br>
+						&nbsp;&nbsp;<i> metemos codigo <i><br>	
+					<b>END CASE;</b>		
+				</p>
+				
+
+
+
+
+			<h3> FOR</h3>	
+				<p class="comandos">
+					<b>FOR</b> indice <b>IN</b>	 [REVERSE] valor_inicial .. valor_final<br>
+					<b>LOOP</b><br>
+					<i>instrucciones</i>;<br>
+					<b>END LOOP;</b><br>
+					
+
+				</p>
+
+
+
+			<h3>LOOP</h3>
+				<p>Ojo.. ajustar bien el parametro <b>EXIT WHEN</b> porque si no se crea un loop infinito. O si no ponemos EXIT WHEN se ejecuta igual, no da error ni nada</p>
+				<p class="comandos">
+					<b>LOOP</b><br>
+					&nbsp;&nbsp;<i> meter todo el codigo;</i><br>
+					&nbsp;&nbsp; v_counter := v_counter +1;<br>
+					&nbsp;&nbsp;<i> meter mas codigo;</i><br>
+					<b>&nbsp;EXIT WHEN</b> v_counter > 3;<br>
+					<b>END LOOP;</b>
+
+				</p>
+
+
+
+
+
+			<h3>WHILE</h3>
+				<p> Este modo de bucle es mas seguro que el loop. Porques es ejecuitar mientras... noseque condicion, si no se cumple sale fuera del bucle</p>
+				<p class="comandos">
+					<b>WHILE</b> v_counter <= 3 <b>LOOP</b><br>
+					&nbsp;&nbsp;<i> meter todo el codigo;</i><br>
+					&nbsp;&nbsp; v_counter := v_counter +1;<br>
+					&nbsp;&nbsp;<i> meter mas codigo;</i><br>
+					<b>END LOOP;</b>
+				</p>
+
+
+
+
+			<h3> Montrar por pantalla</h3>	
+
+				<p class="comandos">
+					<b>dbms_output.put_line</b> (variable);<br>
+					<b>SET SERVEROUTPUT ON;</b> antes hay que meter esta instrucion para ativar el visionado de los mensajes por consola.
+				</p>
+
+
+
+
+			<h3>MIERDAS IMPORTANTES SUELTAS</h3>
+				<h4>Tabla dual</h4>
+					<p>En SQL siempre que haces un <b>SELECT</b> tiene que ir referenciado a una tabla. Si por ejemplo quieres seleccionar variables de entorno del SQL usas la tabla <b>DUAL</b> como comodin</p>
+
+				<h4>SUBSTR</h4>
+					<p>Es para sacar las letras de un VARCHAR, en este caso saca las letras de la 1 hasta la 2. El puto Oracle no empieza desde 0 empieza por 1<br>
+					<i class="comandos"><b>CASE</b> SUBSTR (v_dia, 1,2)</i></p>
+
+				<h4>%TYPE</h4>
+					<p>Es para que cuando declares la variable, esa varaible optenga el tipo de variable de la tabla que le digas:<br>
+					&nbsp; <i class="comandos"> v_dni &nbsp;&nbsp; alumnos.dni<b>$TYPE</b>;</i><br>
+					la varaible v_dni es un VARCHAR porque en la tabla alumnos el valor dni es varchar.</p>
+
+				<h4>Evitar que salga el codigo por consola cada vez que lo ejecutas</h4>
+					<p> Metemos el siguiente codigo pa cambiar las opciones:<br>
+						<i class="comandos"> <b>SET VERIFY OFF ;</b></i></p>
+
+				<h4>fecha diaria</h4>	
+					<p class="comandos"> <b>Sysdate</b></p>	
+
+				<h4>identificador de fila</h4>	
+					<p class="comandos"> <b>Rowid</b></p>
+
+				<h4>usuario de la BD</h4>	
+					<p class="comandos"> <b>USER</b></p>
+
+				<h4>Parametros de sesion</h4>	
+					<p class="comandos"> <b>NLS_Session_Parameters</b></p>						
+
+
+	 	 </article>
+
+
+	 	<article> <h2>Funciones y procedimientos</h2>
+	 		<p> Se trata de asignale nombres a los bloques anonimos para llamarlos cuando queramos con las calses en POO. Las funcione siempre devuelven valores, los procedimientos no.</p>
+
+
+	 		<h3>Crear procedimiento</h3>
+		 		<p> Ejemplo de creacion de un procedimiento que se llama (pro_simple)</p>
+		 		<p class="comandos"> 
+		 			<b>CREATE OR REPLACE PROCED PROCEDURE</b>  pro_simple <b> IS </b> <br>
+		 			&nbsp;&nbsp;  declaramos varaibles etc etc;<br>
+		 			<b>BEGIN</b><br>
+		 			&nbsp;&nbsp;metemos el codigo necesario;<br>
+		 			<b>END</b> pro_simple;
+		 		</p>
+		 	 	<p>Cuando ejecutemos eso se crea el procedimiento pero no se ejecuta. Tambien funciona sin poner el nombre del procedimiento despues del END.</p>
+
+		 	 	<h4>Crear procedimiento metiendole variables y a parte tiene una variable de salida</h4>
+		 	 	<p class="comandos"> <b>CREATE OR REPLACE PROCEDURE</b> sumar_numeros (num1 <b>IN NUMBER</b>, num2 <b>IN NUMBER</b>,suma <b>OUT NUMBER</b>) <br>
+		 	 		La varaible suma, si se usa tambien fuera del procedimiento se actualizaria con el valor de entro del procedimiento.
+		 	 	</p>
+
+		 	<h3>Crear funcion </h3>
+		 	 	<p>En el ejemplo si llamamos a la funcion "Escribe texto" nos devolvera el VARCHAR = 'Subnormal'</p>
+		 		<p class="comandos"> 
+		 			<b>CREATE OR REPLACE PROCED FUNCTION</b>  escribe_texto <b> RETURN VARCHAR2 AS </b> <br>
+		 			&nbsp;&nbsp; declaramos varaibles etc etc;<br>
+		 			<b>BEGIN</b><br>
+		 			&nbsp;&nbsp;metemos el codigo necesario;<br>
+		 			&nbsp;&nbsp;<b>RETURN</b> 'Subnormal';<br>
+		 			<b>END</b>;
+		 		</p>
+
+		 	<h3>Ejecutar procedimiento o funcion</h3>	
+		 	 	<p>hay que llamarlo desde los bloques anonimos</p>
+		 	 	<p class="comandos">
+		 	 		<b>BEGIN</b><br>
+		 	 		&nbsp;&nbsp; pro_simple;<br>
+		 	 		<b>END;</b>
+
+		 	 	</p>
+				<p class="comandos">	Para llamar al  procedimiento pasandole valores<br>
+					&nbsp; sumar_numeros(variable1, variable2, resultado);</p>
+
+		 	<h3>Ver todos los procedimientos y funciones</h3>
+		 		<p class="comandos"> <b>SELECT</b> OBJECT_NAME, OBJET_TYPE, STATUS<br>
+		 			<b>FROM</b> USER_OBJECTS<br>
+		 			<b>WHERE </b> OBJECT_TYPE <b>IN</b> ('PROCEDURE', 'FUNCTION');
+		 		</p>
+
+		 	<h3> Las variables pueden ser IN y OUT a la vez</h3>
+
+
+
+	 	 </article><!--  ........   fin Funciones y procedimientos ............. -->
+
+
+	 	<article> <h2>Excepciones</h2>
+
+	 		<h3> Lanzamiento</h3>
+	 			<p class="comandos"> Las excepciones pueden salir de forma automatica, o forzandolas con <b>RAISE</b></p>
+
+	 		<h3> Creacion</h3>
+	 			<p class="comandos">
+	 				<b>DECLARE</b><br>
+	 					&nbsp;&nbsp;negativo <b>EXCEPTION</b>;<i> -->Creamos la excepcion</i><br>
+	 					&nbsp;&nbsp;<i>metemos codigo</i><br>
+	 					&nbsp;&nbsp;<br>
+	 				<b>BEGIN</b><br>
+	 					&nbsp;&nbsp;<i>metemos codigo</i><br>
+	 					&nbsp;&nbsp;<b>RAISE</b> negativo<i> -->Lanzamos la excepcion</i><br>
+	 					&nbsp;&nbsp;<br>
+	 				<b>EXCEPTION</b><br>
+	 					&nbsp;&nbsp;<b>WHEN</b> negativo <b>THEN </b> <br>
+	 					&nbsp;&nbsp;&nbsp;&nbsp;<i>metemos codigo de la excepcion</i><br>
+	 					&nbsp;&nbsp;<b>WHEN OTHERS</b>  <b>THEN </b> <br>
+	 					&nbsp;&nbsp;&nbsp;&nbsp;<i>metemos para todas las demas excepciones</i>		
+				</p>
+
+
+
+	 		<h3> Tratamiento</h3>
+	 			<p class="comandos"> 
+	 				<b>DECLARE</b><br>
+	 				&nbsp;&nbsp;	 vnombre <b>VARCHAR</b>(20)<br>
+	 				<b>BEGIN</b><br>
+ 					&nbsp;&nbsp;<b>SELECT</b><br>
+ 					&nbsp;&nbsp;&nbsp;&nbsp;nombre<br>
+ 					&nbsp;&nbsp;<b>INTO </b>vnombre<br>
+ 					&nbsp;&nbsp;<b>FROM</b><br>
+ 					&nbsp;&nbsp;&nbsp;	alumnos<br>
+ 					&nbsp;&nbsp;<b>WHERE</b><br>
+ 					&nbsp;&nbsp;&nbsp;	dni= '44587768A'<br>
+ 					<b id="resaltado">EXCEPTION</b><br>
+ 						&nbsp;&nbsp;<b>WHEN</b> no_data_found <b>THEN</b><br>
+ 						&nbsp;&nbsp;&nbsp;dbms_output.put_line('No hay datos para la seleccion');<br>
+
+
+
+	 			 </p>
+
+	 		<h3> Cambiar nombre a una excepcion por defecto de ORACLE</h3>
+	 			<p class="comandos"><b> PRAGMA</b> es para decirle a ORACLE que vas a modificar una excepcion programada pro defecto </p>
+
+	 			<p class="comandos">
+	 				<b>DECLARE</b><br>
+	 					dividir_cero <b>EXCEPTION</b>;<br>
+	 					<b>PRAGMA</b>
+	 					 exception_init (dividir_cero, -01476);<br>
+	 					<br>
+	 				<b>BEGIN</b><br>
+	 					vi1 := 1/0;<br>
+	 					<br>
+	 				<b>EXCEPTION</b><br>
+	 					WHEN dividir_cero <b>THEN </b><br>
+	 					<i>metemos codigo</i>		
+				</p>
+
+			<h3> Imprimir el codigo de error</h3>	
+				<p>dbms_output.put_line(SQLCODE);</p>
+
+			<h3> Imprimir el mensaje de error</h3>	
+				<p>dbms_output.put_line(SQLERRM);</p>
+	 	 </article>
+
+
+	 </section><!--  ===============   FINAL DE  UF3   =======

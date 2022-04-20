@@ -1,0 +1,633 @@
+<!--   &nbsp;    Espacios en blanco -->
+
+<!DOCTYPE html>
+<html>
+
+
+<head><!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+		
+		<title> Apuntes programacion </title>     
+
+
+		<meta charset="UTF-8">
+		<meta name="author" content="Hector Montesdeoca">
+		<meta name="description" content="Mis apuntes pal examen programacion B">
+
+		<link rel="stylesheet" type="text/css" href="EstilosGuapos.css">
+
+</head><!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+
+
+
+<body><!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+
+<!--  ========================================    Cabecera   ======================================================== -->
+	<header>
+		
+		<h1> APUNTES DE PROGRAMACION B </h1>  
+
+				<img src="Fotos/JAVA logo.jpg" alt="Logo java"><br> 
+				<h2>  Programacion con JAVA </h2>    
+				<a href ="https://www.java.com/es/download/help/whatis_java.html"> Pagina oficial de JAVA  </a><br>	
+				<a href ="https://www.jcp.org/en/home/index"> Comunidad de JAVA  </a><br>	
+
+
+
+	 </header> 
+
+
+<!--  ========================================    Menu navegacion   ================================================== -->
+	<nav>  
+
+		<h2>  <a href ="index.html"> Menu </a> </h2>      
+				
+	 </nav>
+
+
+
+<section > <h1> UF4 fundamentos de la POO</h1>
+
+	<article> <h2> Fundamentos  </h2> 
+		<h3>Java</h3>
+			<ul>
+				<li>Es un lenguaje compilado e interpretado. <i>Se compila para cada sistema operativo y se optiene un <b>bytecode</b></i></li>
+				<li>Es multiplataforma. El bytecode se ehecuta con la maquina virtual de Java (<b>JRE</b> <i> Java Environment Runtime)</i>  </li>
+				<li>Es orientado a objetos</li>
+				<li>Posee muchas librerias</li>
+				<br>
+				<li> Es independiente de la plataforma</li>
+				<li>Facil de aprender</li>
+				<li> Basado en estandares</li>
+				<li>Se utiliza a nivel mundial</li>
+				<li>Entornos runtime consistentes</li>
+				<li>Optimizado para controlar dispositivos</li>
+
+			</ul>
+
+		<h3> Programas necesarios para crear proyectos en Java</h3>
+			 Se necesita un <b>IDE <i>(Entorno Integrado de Desarrollo)</i></b>
+				<ul>
+					<li> <a href="https://www.eclipse.org/downloads/" > Eclipse </a> </li>
+						
+					<li> <a href="https://www.jetbrains.com/es-es/idea/download/#section=windows"> InteLLij Idea </a> </li>
+
+					<li> <a href="https://netbeans.apache.org/download/index.html"> NetBeans </a> </li>	
+				</ul>
+
+
+			 A parte del IDE se necesitan unas herramientas de desarrollo llamadas <b><a href="https://www.oracle.com/java/technologies/downloads/#java8"> JDK  </a> <i>(JAva Development Kit)</i></b>
+		 
+		<h3> Estructura basica de ficheros</h3>
+			Dependiendo del IDE tener un primer package sera obligatorio. En clipse si no se hace ninguno, se creara uno virtual llamado <i>default package</i>
+			<img src="Fotos/Java estructura.jpg">
+
+		<h3> POO</h3>
+			<h4>Propiedades</h4>
+				<li><b>Abstraccion</b> Se crean objetos aislados que hacen algo idependiente del resto </li>
+				<li> <b>Encapsulamiento  </b> Se deben de ocultar todos los todo lo posible del obejeto. Mostrar solo lo necesario.    </li>
+				<li> <b>Modularidad </b>  Los objetos deberian de poder reutilizarse y funcionar de manera independiente.    </li>
+				<li> <b>Jerarquia </b>  Habra objetos que dependan de otros   </li>
+				<li> <b>Polimorfismo </b> Permite enviar mensajes iguales a diferentes tipos de objetos   </li>
+
+		<h3> Clases </h3>
+			<ul>
+				<li>Debe empezar por una letra mayuscula</li>
+				<li> Debe estar en singular</li>
+				<li> Debe describir su mision a realizar</li>
+				<li>Utilizar nomenglatura <i>CamelCase</i></li>
+				<li>No utilizar caracteres especiales</li>
+			</ul>
+
+		<h3> Comentarios </h3>
+			De una linea  <p class="Java"><b>//</b> nosequue nosecuanto</p> 
+			De varias lineas <p class="Java"><b>/*</b> Noseque nosecuanto <b>*/</b></p>
+
+
+		<h3> Memoria en Java </h3>
+			<p>Existen dos tipos de almacenaje, la memoria <b>ESTATICA</b> y la <b>DINAMICA</b></p>
+			<p>La dinamica sera creada en tiempo de ejecucion</p>
+			<p>A su vez la memoria estatica y dinamica se dividen en: <br>
+				-<b>Stack</b> o pila, se alacenan las variables, referencias, parametros y valores de retorno<br>
+				-<b>Heap</b> se almacenan los objetos y variableds de instancia.
+			</p>
+
+	 </article>
+
+
+	<article> <h2> Estructura y definicion de Clases</h2>
+
+	 	<h3> Declaracion </h3>
+
+		 	<h4>Codigo para declarar una clase </h4>
+		 	<p class="Java"><b>public class </b> Alumno  <b>{ </b> <br>
+	 			<b>//</b> Atributos ; <br>
+	 			<b>//</b> Metodos ; <br>
+	 			<b>}</b></p> 
+
+
+	 		<h4> Visibilidad de la clase</h4>
+	 		<img src="Fotos/Visibilidad clases.JPG">
+
+
+	 		<h4> Crecion atributos </h4>
+
+				<p class="Java"><b>public class</b> Alumnos {<br>
+				<b>//</b>tipo de visilibidad , tipo dato , nombre <br>
+				<b>private</b> String nombre<b> ;</b> <br>
+				<b>private</b> String curso<b> ;</b> <br>
+				<b>}</b>
+				</p>
+
+			<h4> Creacion de Metodos </h4>
+				<p class="Java"><b>Modificador_de_acceso     tipo_devuelto </b>   nombre_metodo    <b>(parámetros) </b>    <b>{</b> 
+				<b>//</b>     sentencias    ;
+				<b>}</b> </p>
+
+			<h4> Tipos de metodos </h4>
+				<li><b> Static	</b></li>
+				<li><b>abstract </b> </li>
+				<li> <b>final  </b> son como metodos constantes </li>
+				<li><b> native  </b></li>
+				<li><b>Synchronized </b> </li>
+
+			<h4> Sobrecarga metodos </h4>	
+			<p> Poner el mismo nombre del metodo pero con diferentes parametros</p>
+
+			<h4> Constructores</h4>
+				<p> Deben llamarse igual que la clase. Si creamos ninguno se hace uno por default el cual se borra en cuanto hagamos uno.</p>
+
+					<p class="Java">
+						<b>public class</b> Alumnos { <br>
+						<b>//</b><i> Atributos</i> <br>
+						&nbsp;<b>private String</b> nombre;<br>
+						&nbsp;<b>private String</b> curso;<br>
+
+						<b>//</b><i> Constructor vacío, constructor por defecto</i><br>
+						&nbsp;<b>public</b> Alumnos<b>()</b>{<br>
+						&nbsp;&nbsp;	<b>this</b>.nombre = ”Ilerna”;<br>
+						&nbsp;&nbsp;	<b>this</b>.curso = ”Online”;<br>
+						}<br>
+						<b>//</b><i> Constructor con parámetros</i><br>
+						&nbsp;<b>public</b> Alumnos(String nombre, String curso){<br>
+						&nbsp;&nbsp;	<b>this</b>.nombre = nombre;<br>
+						&nbsp;&nbsp;	<b>this</b>.curso = curso;<br>
+						}
+						<b>//</b><i> Métodos</i><br>
+						<b>} </b>
+					</p>
+
+			<h4> Destructores </h4>
+				<p> Java no los utiliza, pero tiene un recolector de basura que llama al metodo <b>Finalize()</b></p>
+
+			<h4> Sintanxis Instanciar objeto</h4>
+
+				<p class="Java">
+					<b>//</b><i>Declaración</i> <br>
+					nombre_clase nombre_variable<b>;</b><br>
+					<b>//</b><i>Creación</i><br>
+					nombre_variable = <b>new</b> nombre_clase <b>();</b><br>
+					<b>//</b><i>Declaración creación</i><br>
+					nombre_clase nombre_variable = <b>new</b> nombre_clase <b>();</b><br>
+
+				</p>
+
+
+			<h4> Sintanxis instanciar  arrays de objetos</h4>
+			<p class="Java">
+								<b>//</b><i>Declaración creación del array</i> <br>
+				&nbsp;				Clase <b>[]</b>nombre_array = <b>new</b> Clase <b>[MAX];</b><br>
+
+								<b>//</b><i>Creación objetos que se necesiten</i><br>
+				&nbsp;					<b>for</b>(int i=0; i< MAX; i++)<b>{</b><br>
+				&nbsp;&nbsp;&nbsp;			nombre_array [i]=<b>new</b> Clase <b>();</b><br>
+				&nbsp;&nbsp;				<b>}</b><br>
+
+								<b>//</b><i>Creación de un objeto determinado para que exista antes de ser utilizado</i><br>
+				&nbsp;				nombre_array [pos] = <b>new</b> Clase <b>();</b><br>
+
+					</p>
+
+
+		<h3> Composicion </h3>
+			<p>Una clase puede tener como varaiables a otra clase.</p>
+			<p class="Java">
+				&nbsp;<b>public class Empresa</b> {<br>
+ 				&nbsp;&nbsp;	<b>private</b> Empleado emp;<br>
+ 				&nbsp;&nbsp;	<b>private</b> int telefono;<br>
+ 				&nbsp;&nbsp;	<b>private</b> String direccion;<br>
+ 				&nbsp;//Constructores<br>
+ 				&nbsp;&nbsp;	<b>public</b> Empresa(){<br>
+     			&nbsp;&nbsp;	emp = <b>new</b> Empleado();<br>
+     			&nbsp;&nbsp;	telefono = 900730222;<br>
+     			&nbsp;&nbsp;	direccion = «Turó Gardeny 25003 Lleida»;<br>
+ 				&nbsp;}</p>
+
+
+     	<h3>Herencia</h3>
+     		<p>	<b>Clase base, clase padre, superclase :</b> Es la clase principal desde la que eredan todas las demas </p>
+     		<p>	<b>Clase derivada :</b> las hijas </p>
+     		<b>Estuctura:</b><br>
+     		<p class="Java">
+     		&nbsp;	<b>class</b> Base {//<i>todo el codigo de la clase</i>}<br>
+     		&nbsp;	<b>class</b> Derivada <b id="resaltado"> extends</b> Base  { <i>//todo el codigo de la clase</i>}
+     		</p>
+     		<p>Ojo la clase derivada solo puede acceder a los modficiradores <b>public</b> y <b>protected</b></p>
+
+     		<h4> Caractersticas con constructores etc</h4>
+	     		<ul>
+	     			<li> Al declarar una instancia de clase derivada debe llamarse de manera automatica al constructos de posea la vlase base</li>
+	     			<li>Si la clase base cuenta con un constructor, la clase derivada debe hacer referencia a estre en su constructor</li>
+	     			<li>Si la clase base no tiene constructores, la dericada no tiene obligacion de hacerle referencia</li>
+	     			<li>Al crear un constructoren la calse derivada, debemos anadirle los parametros necesarios para que puedea inicializar la calse en cuestion y la clase base</li>
+	     		</ul>
+     	
+
+     	<h3> Abstracto</h3>
+	     	<p> Es una plantilla de la que derivan el resto de clases, de esta clase no se puede crear objetos</p>
+	     	<p class="Java"> <b>public</b> <b id="resaltado">abstract</b> <b>class</b> Profesor {<i>//todo el codigo de la clase</i> }</p>
+	     	<p>Los metodos tanbien pueden ser abastractos, pero si uno lo es, ya obliga a serlo toda la clase. Y no llevan cuerpo {}</p>
+
+
+	    <h3>Final</h3>
+	     	<p>Se usa para hacer que un metodo sea constante, no se pueda modificar en futuras herencias. Se usa la palabra reservada FINAL</p>
+	     	<p class="Java"> <b>public</b> <b id="resaltado">final</b> <b>boolean</b> comprobarDNI(String dni){<i>//Comprobación del DNI recibido por parámetros.</i>}</p>
+
+
+	    <h3> Sobre escritura de metodos (Overriding)</h3>
+	    	<p>Una clase que hereda puede modificar los metodos de la padre. Tendrian mismo nombre pero modificados. La firmna del metodo tiene que ser identica, mismo parametros de entrada, mismo valor de salida etc. Se usara la anotacion <b>@Override</b> encima del metodo</p>
+	    	<p class="Java"> <b id="resaltado">@Override</b><br>
+			<b>public</b> <b>double</b> pacs(double pac1, double pac2, double pac3) {<i>//todo el codigo de la clase</i> }</p>
+
+
+		<h3>Interfaces</h3>
+			<p>Son una clase con un conjunto de metodos que no necesitan ser definidos, serian 100% abstracta. Serian como el molde de la clase</p>
+
+			<h4>Creacion</h4>
+			<p class="Java"> <b>Modificador_de_acceso</b> <b id="resaltado">interface</b> nombre_interface {tipo nombre1 (parámetros);tipo nombre2 (parámetros);}</p>
+
+			<h4>Heredar entre interfaces</h4>
+			<p class="Java"> <b>Modificador_de_acceso</b> <b id="resaltado">interface</b> Interfaz_Derivado <b>extends</b> Interfaz_Base{ <i>//código </i>}</p>
+
+			<h4>Implementacion</h4>
+			<p class="Java"> <b>class</b> nombre <b id="resaltado">implements</b> nombreInterface1, nombreInterface2, nombreInterfaceN {<i>//código </i>}</p>
+
+
+	 </article>
+
+
+
+
+ </section><!--  =====    Fin de  UF4  =========== -->
+ 
+
+
+<section >  <h1> UF5 POO librerias de clases fundamentales </h1><hr>
+
+	
+
+	<article> <h2> Clase System</h2>
+
+			<p>Pertenece al package.java.lang y dispone de varios metodos estatidos a utilizar.</p>
+
+			 <h3> out</h3>
+			 	<p> hacen referencia a entrada, salida y salida de errores <br>
+			 	<ul>
+			 		<li><p class="Java"> System.<b>OUT</b>. seguido de <b>println()</b> o <b>print()</b> imprime lo que esta entre parentesis otros ejenmplos:<br>
+			 			<b>println</b>( <i>java.lang.Object</i> ), <b>println</b>( <i>java.lang.String</i>) , <b>println</b>( <i>boolean</i>) <br>
+			 			<b>printtf(<i>cadena para foramto, variables</i>)</b>
+			 			</p>
+
+			 			<p> <b>Caracteres especiales</b> <br> <img src="Fotos/caracteres especiales.JPG"></p>
+
+			 			<p> <b>Caracteres especiales para imprimir fechas</b> <br> <img src="Fotos/Caracteres imprimir fecha.JPG"></p>
+			 		</li>
+
+			 		<li><p class="Java">System. <b>IN</b>.read()
+			 			
+
+
+			 			</p>
+			 		</li>
+
+			 <h3> IN </h3>
+				 <p class="Java">
+				 	int numero= System.in.read();<br>
+				 	recoge un numero entero equivalente al codigo ASCII del caracter pulsado.
+
+				 </p>
+
+
+			 	</ul>
+	 			</p>
+
+
+	 		<h3>ERR</h3>
+
+			 <h3>Interactua con el sistema</h3>
+			 	<p> System.out.println(System.getProperty(“java.home”)); </p>
+
+			 <h4>arrayCopy()</h4>
+			 <h4>currentTimeMillis()</h4>
+			 <h4>exit()</h4>
+			 <p>Termina el programa JAVA</p>	
+	</article>
+
+
+	<article> <h2> Clase Console</h2>
+			<p>Para usarla hay que instanciarla, es una instancia unica. Tambien hay que configurar windows para porder usar su consola. Ojo que hay que importar la libreria <b>java.io</b></p>
+
+			<p class="Java">Console <b>console</b> = <b>null</b>;<br>
+			&nbsp;	console = System.console(); </p>
+
+			<h3> Algunos metodos:</h3>
+			<p class="Java"> <b>readLine()</b>, <b>readPassword()</b></p>
+	</article>
+
+
+	<article> <h2>Clase Scanner</h2>
+			<p>Pertenece a la libreria <b>java.util</b>. Se usa para obtener datos de usuarios. Podemos meterle un fichero para que lo lea</p>
+			<p class="Java">
+				<b>Scanner</b> sc = new <b>Scanner</b> (System.is);<br>
+				<b>String</b> nombre = sc.<b>nextLine</b>();
+
+
+
+			</p>
+	</article>
+
+
+	<article> <h2>Clase Arrays </h2>
+		<p class="Java">
+		<b>int</b>[] vector = <b>new int</b>[5];<br>
+		<b>float</b> matriz [][]= <b>new</b> [][];<br>
+		<b>char</b> cubo_rubik [][][]= new char [][][];<br>
+		<b>String</b> [] insultos = {"Mierdecilla", "Retrasado", "Puto", "Infeliz"};<br>
+		</p><br>
+
+		<p class="Java">Se pueden hacer arrays irregulares, solo es obligatorio indicar el numero de filas
+		<b>int</b> m [][]= <b>new</b>int [3][];<br>
+		</p>
+
+
+
+		<h3>Metodos</h3>
+
+			<table>
+				<tr>
+					<td><b>Length()</b></td>
+					<td>longitud matriz</td>
+				</tr>
+				<tr>
+					<td><b>clone()</b></td>
+					<td>devuelve una copia</td>
+				</tr>
+				<tr>
+					<td><b>hashCode()</b></td>
+					<td>devuelve un valor de codigo hash</td>
+				</tr>
+				<tr>
+					<td><b>toString</b></td>
+					<td>devuelve una representacion de cadena</td>
+				</tr>
+				<tr>
+					<td><b>equals()</b></td>
+					<td>indica si otro ojeto es igual</td>
+				</tr>
+				<tr>
+					<td><b>getClass()</b></td>
+					<td>devuelve la clase de tiempo de ejecucion</td>
+				</tr>
+				<tr>
+					<td><b>notify()</b></td>
+					<td>despierta un unico hilo que esta esperando en el monitor del objeto</td>
+				</tr>
+				<tr>
+					<td><b>notifyAll()</b></td>
+					<td>despiesta todos los hilos</td>
+				</tr>
+				<tr>
+					<td><b>wait()</b></td>
+					<td>hace que el subproceso actual espera hasta que otro subproceso invoque al metodo notify(). O haya transcurrido un periodo de tiempo determinado</td>
+				</tr>
+			</table>
+	</article>
+
+
+	<article> <h2>Clase String</h2>
+			<p class="Java">
+				<b>String</b> str;<br>
+				<b>String</b> pepe = " tontetias sin tino" ;<br>
+				<b>String</b> texto = new String ("Mas tonterias");		
+			</p>
+
+			<h3>Metodos</h3>
+				<table>
+					<tr>
+						<td><b> charAT</b>(int indice)</td>
+						<td>devuelve el caracter indicado</td>
+					</tr>
+					<tr>
+						<td><b>equals (String string)</b></td>
+						<td>devuelve un TRUE si son iguales si no devuelve FALSE</td>
+					</tr>
+					<tr>
+						<td><b>isEmpty()</b></td>
+						<td>si la cadena esta vacia devuelve un TRUE</td>
+					</tr>
+					<tr>
+						<td><b>length()</b></td>
+						<td>devuelve la longitud de la cadena</td>
+					</tr>	
+					<tr>
+						<td><b>Split(String expresion)</b></td>
+						<td>devuelve un array de String con los elementos de la cacena expresion</td>
+					</tr>
+					<tr>
+						<td><b>toLowerCase()</b></td>
+						<td>devuelve un String con todo en minusculas</td>
+					</tr>
+					<tr>
+						<td><b>toUpperCase()</b></td>
+						<td>devuelve un array con todo en mayusculas</td>
+					</tr>
+					<tr>
+						<td><b>trim()</b></td>
+						<td>una copia de la cadena sin espacios en blanco</td>
+					</tr>
+					<tr>
+						<td><b>valueOf(tipo variable)</b></td>
+						<td>devuelve la cadena de caracteres que resulta de convertir la variable del tipo que se pasa por parametro</td>
+					</tr>
+				</table>
+	</article>
+
+ 
+	<article><h2> Collection</h2>
+
+		<h3>List</h3>
+			<p>-Pueden estar repetidos<br>
+			- se indexan mediante indice numerico<br>
+			-Secuenci de elementos que ocupan una posicion determinada</p>
+
+		<h4>Clases derivadas de list</h4>
+			<ul>
+				<li>Abtractlist</li>
+				<li>AbstractSequencialList</li>
+				<li><b>Arraylist</b></li>
+				<li>AtributeList</li>
+				<li><b>LinkedList</b></li>
+				<li><b>Vector</b></li>
+				<li>CopyOnWriteArraylist</li>
+				<li>Stack</li>
+				<li>Rolelist</li>
+				<li>RoleUnresolvedList</li>
+			</ul>
+
+
+			<h4>ArrayList</h4>
+				<p>Implementa una lista de elementos mediante un array de tamano variable</p>
+				<table>
+						<tr>
+							<td>get(int)</td>
+							<td>obtiene el opjeto de la posicion indicada</td>
+						</tr>
+						<tr>
+							<td>indexOf(Object)</td>
+							<td>Obtiene la posicion del objeto indicado</td>
+						</tr>
+						<tr>
+							<td>isEmpty()</td>
+							<td>Booleano, comprueba si existen datos</td>
+						</tr>
+						<tr>
+							<td>add (object)</td>
+							<td>instar un objeto en la ultima posicion</td>
+						</tr>
+						<tr>
+							<td>add (int, object)</td>
+							<td>inserta un objeto en la posicion indicada</td>
+						</tr>
+						<tr>
+							<td>set(int, Object)</td>
+							<td>inserta Object en la posicion indicada, reemplaza el que existe </td>
+						</tr>
+						<tr>
+							<td>toArray()</td>
+							<td>Convierte el ArrayList en un array del tipo especificado</td>
+						</tr>
+				 </table>
+
+				 	<p class="Java"> <b>ArrayList</b> < Integer> numeros = new ArrayList();</p>
+				 	<p class="Java"> 
+				 		numeros.<b>add</b>(3)<br>
+				 		numeros.<b>add</b>(4)<br>
+						numeros.<b>add</b>(0,4)<br>	
+				 	</p>
+
+
+		 	<h4>LinkedList</h4>
+		 	<p>-El acceso es secuencial, localizar un elemento que no esta ni al principio ni al final lleva un tiempo proporcional al tamano de la lsita<br>
+		 		-El rendimiento en los extremos es constante
+		 	</p>
+				<table>
+						<tr>
+							<td>removeFirst()</td>
+							<td>elimina el primer elemento</td>
+						</tr>
+						<tr>
+							<td>addFirst()</td>
+							<td>Anade un elemento al principio de la lista</td>
+						</tr>
+						<tr>
+							<td>addLast()</td>
+							<td>Anade un elemento al final de la lista</td>
+						</tr>
+						<tr>
+							<td>getFirst()</td>
+							<td>Devuelve el primer elemento de la lista</td>
+						</tr>
+						<tr>
+							<td>getLast()</td>
+							<td>devuelve el ultimo elemento</td>
+						</tr>
+						
+				 </table>
+
+				 <p class="Java"> <b>LinkedList</b> nombre = new <b>LinkedList</b>();</p>
+				 <p class="Java"> <b>LinkedList</b> < tipo de dato> nombre = new <b>LinkedList</b> < tipo de dato> ();</p>
+
+
+
+		<h3>Set</h3>
+			<p>Elementos no repetidos y sin ordenar</p>
+
+
+
+		<h3>SortedSet</h3>
+			<p></p>
+
+
+
+		<h3>Queue</h3>
+			<p>No permite el acceso aleatorio, solo se puede acceder al primero o al ultimo</p>
+
+
+
+
+		<h3>Clase iterator</h3>
+			<p>Para recorrer las colecciones podemos usar el iterador</p>
+
+			<table>
+				<tr>
+					<td>next()</td>
+					<td>devuelve el siguiente elemento</td>
+				</tr>
+				<tr>
+					<td>hasNext()</td>
+					<td> devuelve verdadero si la iteracion tiene mas elementos</td>
+				</tr>
+				<tr>
+					<td>remove()</td>
+					<td>eliminia de la coleccion subyacente el ultimo elemento devuelto por este iterador</td>
+				</tr>
+			</table>
+
+			<p class="Java"> 
+				<b>Iterator</b> < String> iterador = nombre.iterador();<br>
+				<b>While</b> (iterador.<b>hasNext</b>()){<br>
+					<i>Codigo </i><br>
+				}
+			</p>
+	</article>
+
+	
+</section><!--  SSSSS    Fin de  UF5  SSSSS -->
+
+
+
+<section >  <h1> UF6 Introduccion a la persistencia de BD</h1>
+
+
+	<article> <h2> titulo </h2> <!--  ........................   thh .................................. -->
+		
+
+	 </article>
+</section><!--  SSSSSSSSS    Fin de  UF6  SSSSSSS -->
+
+
+
+
+
+
+
+
+</body><!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+
+
+
+
+
+</html>

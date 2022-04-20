@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+
+<head><!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+		
+		<title> Git </title>     
+
+
+		<meta charset="UTF-8">
+		<meta name="author" content="Hector Montesdeoca">
+		<meta name="description" content="Mis apuntes de Git">
+
+		<link rel="stylesheet" type="text/css" href="EstilosGuapos.css">
+
+</head><!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+
+
+
+<body><!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+
+<!--  ========================================    Cabecera   ======================================================== -->
+	<header>
+		
+		<h1> Git </h1>  
+
+				<img src="Fotos/git.jpg" alt="Logo git"><br> 
+				<h2>  repositorios </h2>    
+				<a href ="https://git-scm.com/"> Pagina oficial de Git </a><br>	
+				<a href ="https://training.github.com/downloads/es_ES/github-git-cheat-sheet/">Principales comandos </a><br>
+				<a href ="https://ndpsoftware.com/git-cheatsheet.html#loc=local_repo;">Lista comandos guapa </a><br>	
+
+				
+
+
+
+	 </header> 
+
+
+<!--  ========================================    Menu navegacion   ================================================== -->
+	<nav>  
+
+		<h2>  <a href ="index.html"> Menu </a> </h2>      
+				
+	 </nav>
+
+
+	
+	
+
+
+
+<section > <h1>Git</h1><!--  ============    Git   ================== -->
+
+	<article> <h2> Crear repositorio </h2> 
+
+		<h3>Indicar a Git el directorio de trabajo</h3>
+			<p>Primero hay que colocarse con la consola de Git dentro del directorio.</p>
+			<p class="Git"> <b>git init</b></p>
+			<p>Aun no se a comenzado a crear las copias.</p>
+			<p>Crea dos areas, <b>Area de ensayo, y area de repositorio local</b></p>
+
+
+		<h3>Indicar archivos para realizar seguimiento </h3>
+			<p class="Git"> <b>git add</b> nombre archivo</p>
+			<p class="Git"> <b>git add .</b></p>
+			<p>Lo mete en el <b>area de ensayo</b></p>
+		
+
+		<h3>Crear la copia</h3>
+			<p>Previamente deberia estar en el area de ensayo con el comando "add". Este paso se hace siempre antes del commit</p>
+			<p class="Git"> <b>$ git commit -m </b>"Version 0"</p>
+			<p>Lo mete en el <b>Repositorio local</b></p>
+
+		<h3> Add y Commit a la vez</h3>	
+			<p class="Git"> <b>$ git commit -am </b>"Version 0"</p>
+
+
+
+	 </article>
+
+
+
+	<article> <h2> Listar datos </h2> 
+
+		<h3> Ver listado de archivos en carpeta proyecto</h3>
+			<p class="Git"> <b>git status -s</b></p>
+		
+
+		<h3> Ver listado de todas las copias</h3>
+			<p class="Git"> <b>$ git log --oneline</b></p>
+
+ 	</article>
+
+
+
+	<article> <h2> Restaurar versiones</h2> 
+
+		<h3> Restaurar una version</h3>
+			<p class="Git"> <b>$ git reset --hard</b> 01cdac6</p>
+
+
+		<h3> Clonar la version de Github</h3>
+			<p>En github nos dan el enlace para compiar en el comando</p>
+			<p class="Git"> <b>$ git clone</b> Https:......</p>
+
+
+	 </article>
+
+
+	 <article> <h2> Otros </h2>
+	 	<h3>Tags</h3>
+	 	<p class="Git"><b>$ git tag 18/04/2022v1 -m "Verion con Git"</b></p>
+
+	 	
+
+	 </article>
+
+
+
+
+
+
+	<article><h2> Editor VIM</h2>
+		<h3> Entrar al editor </h3>
+			<p class="Git"> <b>$ git commit --amend</b></p>
+
+		<h3> manejo</h3>
+			<p class="Git"><b>:i</b>  para editar</p>
+			<p class="Git"><b>u </b> para deshacer</p>
+			<p class="Git"><b>ESC</b>  salir modo edicion</p>
+			<p class="Git"><b>:wq </b> para salir</p>
+
+	</article>
+
+
+ </section>
+
+
+
+
+
+<section > <h1> GitHub </h1><!--  ============    GitHub   ================== -->
+	<article><h2>  Trabajar con el repositorio</h2>
+
+		<h3> Subir el repositorio de git </h3>
+			<p>En la pagina de GitHub estan  los pasos:</p>
+			<p class="Git"><b>$ git remote add origin https://github.com/H3ctorOS/Apuntes.git</b></p>
+			<p class="Git"><b>$ git branch -M master</b></p>
+			<p class="Git"><b>$ git push -u origin master</b></p>
+
+
+		<h3> Subir de local a Github</h3>
+			<p class="Git"><b>$ git push</b></p>
+
+
+
+		<h3> Bajar de Github a local</h3>
+			<p class="Git"><b>$ git pull</b></p>
+
+	</article>
+
+
+	<article><h2>  Tags</h2>
+		<h3> Subir a Github</h3>
+			<p class="Git"><b>$ git push --tags</b></p>
+
+	
+	</article>
+
+	
+
+</section>
+
+
+
+
+
+ 
+
+
+
+</body><!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
+
+
+
+
+
+
+</html>
