@@ -397,7 +397,10 @@
 
 			<h4> Secciones CDATA </h4>
 				<p> Son caracteres que no necesitan ser procesados</p>
-						
+			
+
+		<h3> Validacion</h3>
+
 	 </article>
 
 
@@ -499,7 +502,8 @@
 				</ul>
 
 
-		
+		<h3>Ejemmplo</h3>
+			<img src="Fotos/DTD ejemplo.JPG">
 
 
 	 </article>
@@ -513,7 +517,46 @@
 				<b>< persona xmlns:xsi </b>=”http://www.w3.org/2001/XMLSchema-instance” 
 				<b>xsi:noNamespaceSchemaLocation</b> = “personas.xsd”> </p>
 
+		<h3>xs:element</h3>
+			<p>Atributos principales<br>
+				<ul>
+					<li><b>name</b> nombre del elemento</li>
+					<li><b>ref</b> la descripcion del elemento esta en un lugar diferente</li>
+					<li><b>type</b> tipo de elemnto</li>	
+					<li><b>default</b> valor que toma por defecto</li>
+					<li><b>fixed</b> unico valor que puede tomar el elemento</li>
+					<li><b>minOccurs</b> minimo numero apariciones</li>
+					<li><b>maxOccurs</b> MAximas apariciones</li>
+				</ul>
+			</p>
 
+		<h3>xs:atribute</h3>
+			<p>Atributos principales<br>
+				<ul>
+					<li><b>name</b> asociado al nombre del elmento</li>
+					<li><b>ref</b> se utiliza para definir el elemento en otro sitio</li>
+					<li><b>type</b> tipo elemento</li>
+					<li><b>use</b> indica si es obligatorio, opcional, o prohibida la existencia de un atributo</li>
+					<li><b>default</b> valor que toma cuando es procesado</li>
+					<li><b>fixed</b> unico valor que puede tomar un atributo</li>
+
+				</ul>
+			</p>
+
+		<h3> Tipo de contenido</h3>	
+			<h4> < xs:simpleContent > </h4>
+				<p>contenido simple solo contiene elementos que posean contenido textual, sin elementos descendentes</p>
+
+			<h4> < xs:complexContent ></h4>
+				<p> Pueden poseer contenido textual, pueden tener elementos descendentes</p>
+				<p> <b>< xs:sequence ></b> los contenidos estan en la misma secuencia</p>
+				<p> <b>< xs:choice ></b> obliga a elegir solo un elemento</p>
+				<p> <b>< xs:all ></b> da igual el orden</p>
+
+
+
+		<h3>Ejemplo</h3>
+			<img src="Fotos/XSD ejemplo.JPG">
 
 	 </article>
 
@@ -526,7 +569,36 @@
 
 
 <section>  <h1> UF2 </h1> <!--  ssssssssssssssssssssssssssssssss   UF2    ssssssssssssssssssssssssssssssssssssssssssssssssss -->	
-	
+
+	<article> <h2> RSS </h2>
+
+		<h3>  Estructura </h3> 
+			<p>Primero siempre hay que poner la linea de XML y la segunda siempre es la del RSS version etc. Despues se abre la de channel y al final se cierran tanto channel como RSS</p>
+			<p> Title, link y description son obligarorios tanto en el channel como en el item</p>
+			<img src="Fotos/RSS estructura.JPG">
+
+		<h3>Etiqueta channel</h3>
+			<img src="Fotos/RSS elementos channnel.JPG" align="middle" >
+
+
+		<h3>Etiqueta item</h3>
+			<img src="Fotos/RSS elementos ITEM.JPG">
+
+
+		<h3> Software de creacion de canales de contenido</h3>
+			<h2>Drupal</h2>
+			<h2>JOOMLA!</h2>
+
+		<h3>Validacion de RSS</h3>
+			<a href="https://validator.w3.org/feed/" alt="WC3"> https://validator.w3.org/feed/</a>
+
+		<h3> Agregacion</h3>
+		<p>Hay varios tipos, <b>De Escritorio, en linea, como plugins</b></p>
+			
+
+	 </article>
+
+
 
  </section>
 
