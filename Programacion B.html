@@ -466,24 +466,26 @@
  
 	<article><h2> Collection</h2>
 
+		<img src="Fotos/Java Collections.JPG">
+
 		<h3>List</h3>
 			<p>-Pueden estar repetidos<br>
 			- se indexan mediante indice numerico<br>
 			-Secuenci de elementos que ocupan una posicion determinada</p>
 
-		<h4>Clases derivadas de list</h4>
-			<ul>
-				<li>Abtractlist</li>
-				<li>AbstractSequencialList</li>
-				<li><b>Arraylist</b></li>
-				<li>AtributeList</li>
-				<li><b>LinkedList</b></li>
-				<li><b>Vector</b></li>
-				<li>CopyOnWriteArraylist</li>
-				<li>Stack</li>
-				<li>Rolelist</li>
-				<li>RoleUnresolvedList</li>
-			</ul>
+			<h4>Clases derivadas de list</h4>
+				<ul>
+					<li>Abtractlist</li>
+					<li>AbstractSequencialList</li>
+					<li><b>Arraylist</b></li>
+					<li>AtributeList</li>
+					<li><b>LinkedList</b></li>
+					<li><b>Vector</b></li>
+					<li>CopyOnWriteArraylist</li>
+					<li>Stack</li>
+					<li>Rolelist</li>
+					<li>RoleUnresolvedList</li>
+				</ul>
 
 
 			<h4>ArrayList</h4>
@@ -528,55 +530,168 @@
 
 
 		 	<h4>LinkedList</h4>
-		 	<p>-El acceso es secuencial, localizar un elemento que no esta ni al principio ni al final lleva un tiempo proporcional al tamano de la lsita<br>
-		 		-El rendimiento en los extremos es constante
-		 	</p>
+			 	<p>-El acceso es secuencial, localizar un elemento que no esta ni al principio ni al final lleva un tiempo proporcional al tamano de la lsita<br>
+			 		-El rendimiento en los extremos es constante
+			 	</p>
+					<table>
+							<tr>
+								<td>removeFirst()</td>
+								<td>elimina el primer elemento</td>
+							</tr>
+							<tr>
+								<td>addFirst()</td>
+								<td>Anade un elemento al principio de la lista</td>
+							</tr>
+							<tr>
+								<td>addLast()</td>
+								<td>Anade un elemento al final de la lista</td>
+							</tr>
+							<tr>
+								<td>getFirst()</td>
+								<td>Devuelve el primer elemento de la lista</td>
+							</tr>
+							<tr>
+								<td>getLast()</td>
+								<td>devuelve el ultimo elemento</td>
+							</tr>
+							
+					 </table>
+
+					 <p class="Java"> <b>LinkedList</b> nombre = new <b>LinkedList</b>();</p>
+					 <p class="Java"> <b>LinkedList</b> < tipo de dato> nombre = new <b>LinkedList</b> < tipo de dato> ();</p>
+
+
+
+		<h3>Set <i>(Conjuntos)</i></h3>
+
+			<p>Elementos no repetidos, sin ordenar. La ventaja de de Set es poder preguntar si un elemento ya esta en la coleccion mediante (contains() ).</p>
+
+			<h4>Clases derivadas de SET</h4>
+				<ul>
+					<li>AbtractSet</li>
+					<li>ConcurrentSkipSet</li>
+					<li>CopyOnWriteArraySet</li>
+					<li>EnumSet</li>
+					<li><b>HashSet</b></li>
+					<li>JobStateReasons</li>
+					<li>LinkedHashSet</li>
+					<li><b>TreeSet</b></li>
+				</ul>
+
+			<h4>HashSet</h4>
+				<p>Almacena datos en tabla dispersion (Hash). Es rapida para borrado,insercion y busqueda. La iteracion a traves de sus elementoss es mas costosa.</p>
+
+			<h4>TreeSet</h4>	
+				<p>Almacena datos en arbol. El coste para realizar operaciones basicas es logaritmico.</p>
+
+
+
+
+		<h3>Queue <i>(Cola)</i></h3>
+
+			<p>No permite el acceso aleatorio, solo se puede acceder al primero o al ultimo</p>
+			<p>Siguen el patron FIFO <i>(First in - First out)</i></p>
+			<p>Tiene creadas clases en las que los objetos tambien se puede poner al principio</p>
+
+			<h4>Clases derivadas de Queue</h4>
+				<ul>
+					<li>AbtractQueue</li>
+					<li>ArrayBlockingQueue </li>
+					<li><b>ArrayDeque </b></li>
+					<li>ConcurrentLinkedDeque </li>
+					<li>ConcurrentLonkledQueue </li>
+					<li>DelayQueue </li>
+					<li>LinkedBlockinbgDeque </li>
+					<li>LinkedBlockinbgQueue </li>
+					<li>Linkedlist </li>
+					<li>LinkedTransferQueue </li>
+					<li>PriorityBlockingQueue </li>
+					<li>PriorityQueue </li>
+					<li>SynchronoysQueue </li>
+				</ul>
+
+
+			<h4>ArrayDeque</h4>
+				<p> Son una pila y una cola optimizadas.</p>
+				<p>Se usa en analizadores y caches</p>
+				<p>Los cambios de estado se basan en la ultima etiquieta encontrada</p>
+
+					<table>
+							<tr>
+								<td>push()</td>
+								<td>anade elementos al principio</td>
+							</tr>
+							<tr>
+								<td>pop()</td>
+								<td>elimina elementos de la cola que se ha insertado primero</td>
+							</tr>
+							<tr>
+								<td>pollFirst()</td>
+								<td>elimiona el primer elemento de la cola</td>
+							</tr>
+							<tr>
+								<td>pollLast()</td>
+								<td>elimina el ultimo elemento de la cola</td>
+							</tr>							
+					 </table>
+
+
+		<h3>Map</h3>
+			<img src="Fotos/Java MAP.JPG">
+			<p>Conjunto de valores con una clave asociada.</p>
+
+
+			<h4>Metodos mas importantes</h4>
 				<table>
 						<tr>
-							<td>removeFirst()</td>
-							<td>elimina el primer elemento</td>
+							<td>get(Object)</td>
+							<td>obtiene el valor correspondiente a una clave.Devuelve null si la clave no existe.</td>
 						</tr>
 						<tr>
-							<td>addFirst()</td>
-							<td>Anade un elemento al principio de la lista</td>
+							<td>put(clave, valor)</td>
+							<td>anade un par clave-valor. Si el valor de esa clave existe la reemplaza</td>
 						</tr>
 						<tr>
-							<td>addLast()</td>
-							<td>Anade un elemento al final de la lista</td>
+							<td>keySet()</td>
+							<td>devuelve todas la claves(devuelve un Set,sin duplicados)</td>
 						</tr>
 						<tr>
-							<td>getFirst()</td>
-							<td>Devuelve el primer elemento de la lista</td>
+							<td>values()</td>
+							<td>devuelve todos los valores, si puede haber duplicados</td>
 						</tr>
 						<tr>
-							<td>getLast()</td>
-							<td>devuelve el ultimo elemento</td>
-						</tr>
-						
+							<td>entrySet()</td>
+							<td>devuelve todos pares calve-valor</td>
+						</tr>	
 				 </table>
 
-				 <p class="Java"> <b>LinkedList</b> nombre = new <b>LinkedList</b>();</p>
-				 <p class="Java"> <b>LinkedList</b> < tipo de dato> nombre = new <b>LinkedList</b> < tipo de dato> ();</p>
+
+			<h4>Clases derivadas de MAP</h4>
+				<ul>
+					<li>AbtractMap</li>
+					<li>Attributes</li>
+					<li>AuthProvider</li>
+					<li>ConcurrentHashMap</li>
+					<li>ConcurrentSkipListMap</li>
+					<li>EnumMap</li>
+					<li>HashMap</li>
+					<li>Hashtable</li>
+					<li>IdentityHashMap</li>
+					<li>PrinterStateReasons</li>
+					<li>Propierties</li>
+					<li>Provider</li>
+					<li>RenderingHints</li>
+					<li>SimpleBindings</li>
+					<li>TabularDataSupport</li>
+					<li>TreeMap</li>
+					<li>IUDefaults</li>
+					<li>WeakHashMap</li>
 
 
-
-		<h3>Set</h3>
-			<p>Elementos no repetidos y sin ordenar</p>
+				</ul>
 
 
-
-		<h3>SortedSet</h3>
-			<p></p>
-
-
-
-		<h3>Queue</h3>
-			<p>No permite el acceso aleatorio, solo se puede acceder al primero o al ultimo</p>
-
-
-
-
-		<h3>Clase iterator</h3>
+		<h3>Clase Iterator</h3>
 			<p>Para recorrer las colecciones podemos usar el iterador</p>
 
 			<table>
