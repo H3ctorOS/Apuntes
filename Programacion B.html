@@ -47,7 +47,7 @@
 
 
 
-<section > <h1> UF4 fundamentos de la POO</h1>
+<section > <h1>UF4 fundamentos de la POO</h1>
 
 	<article> <h2> Fundamentos  </h2> 
 		<h3>Java</h3>
@@ -283,11 +283,11 @@
  
 
 
-<section >  <h1> UF5 POO librerias de clases fundamentales </h1><hr>
+<section >  <h1>UF5 POO librerias de clases fundamentales </h1><hr>
 
 	
 
-	<article> <h2> Clase System</h2>
+	<article> <h2>Clase System</h2>
 
 			<p>Pertenece al package.java.lang y dispone de varios metodos estatidos a utilizar.</p>
 
@@ -335,7 +335,7 @@
 	</article>
 
 
-	<article> <h2> Clase Console</h2>
+	<article> <h2>Clase Console</h2>
 			<p>Para usarla hay que instanciarla, es una instancia unica. Tambien hay que configurar windows para porder usar su consola. Ojo que hay que importar la libreria <b>java.io</b></p>
 
 			<p class="Java">Console <b>console</b> = <b>null</b>;<br>
@@ -464,7 +464,7 @@
 	</article>
 
  
-	<article><h2> Collection</h2>
+	<article><h2>Collection</h2>
 
 		<img src="Fotos/Java Collections.JPG">
 
@@ -717,8 +717,45 @@
 			</p>
 	</article>
 
+
+	<article><h2> Clases y metodos genericos</h2>
+		<p>Introducidos en la version 5 , en 2004</p>
+		<p>Permiten eliminar los cast.</p>
+		<p>Comprobacion de tipos mas fuertes en tiempo de compilacion</p>
+		<p>Posibilidad de implementar algoritmos genericos, con tipado seguro</p>
+
+		<h3>Clases genericas</h3>
+			<h4>Sintaxis</h4>
+				<p class="Java"> modificador de acceso <b>class</b> nombre_clase <b> < T ></b> { <br>
+					T varaible; <br>
+				}</p>
+				<br>
+
+				<p>A partir de Java 7, aparece el operador <i>diamond (<>) con el que el compilador interferira el tipo de varaible.</i> </p>
+				<p>T representa un tipo de referencia valido. Separados por "," se pueden poner varios</p>
+
+						<p class="Java">public <b>interface </b>  nombre_interface <b>< K ,V ></b>{ <br>
+						public K getKey();<br>
+   						 public V getValue();<br>
+						}<br>
+						 </p>
+
+
+			<h4>Metodos genericos</h4>
+
+				<p class="Java">public static < T > T metodogenerico (T parametroFormal){ <br>
+				//código método<br>
+				}</p>
+
+				<p></p>
+
+	 </article>
+
+
 	
 </section><!--  SSSSS    Fin de  UF5  SSSSS -->
+
+
 
 
 
