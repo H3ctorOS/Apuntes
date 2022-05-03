@@ -32,6 +32,7 @@
 				<h2>  Programacion con JAVA </h2>    
 				<a href ="https://www.java.com/es/download/help/whatis_java.html"> Pagina oficial de JAVA  </a><br>	
 				<a href ="https://www.jcp.org/en/home/index"> Comunidad de JAVA  </a><br>	
+				<a href ="https://docs.oracle.com/javase/7/docs/api/overview-summary.html"> Documentacion JAVA  </a><br>
 
 
 
@@ -718,7 +719,7 @@
 	</article>
 
 
-	<article><h2> Clases y metodos genericos</h2>
+	<article><h2>Clases y metodos genericos</h2>
 		<p>Introducidos en la version 5 , en 2004</p>
 		<p>Permiten eliminar los cast.</p>
 		<p>Comprobacion de tipos mas fuertes en tiempo de compilacion</p>
@@ -747,9 +748,168 @@
 				//código método<br>
 				}</p>
 
-				<p></p>
+				<p class="Java"> claseDelMetodoGenerico.< TipoConcreto > método(ParametroReal);</p> 
+				<p class="Java"> ClasedelMetodoGenerico.metodo (parametroReal);</p> 
+
+
+			<h4>Comodines</h4>
+				<p>Se trata de ir siempre a la parte superior de la jerarquia. List< Number> es mas restrictivo que List< ?extends Number></p>
+				<p class="Java"> public static void process(List < ? extends Number> list){/*...*/}</p>
+	</article>
+
+
+	<article><h2>Expresiones regulares de busqueda</h2>
+		<p>Salieron en la version 1.4</p>
+		<p>java.util.regex</p>
+		<p>Con la clase <b>Pattern</b> se crea el patron de busqueda, se indica lo que tiene que buscar y cuantas repeticiones<br>
+			Con <b>Matcher</b> se comparan el patron con lo que se necesite</p>
+		<img src="Fotos/Java patrones de busqueda.JPG">
+
+		<h3>Principales expresiones</h3>
+			<table>
+				<tr>
+					<td>.</td>
+					<td>Un punto indica cualquier caráctera</td>
+				</tr>
+				<tr>
+					<td>^expresión</td>
+					<td>El símbolo ^ indica el principio del String. En este caso el String debe contener la expresión al principio.</td>
+				</tr>
+				<tr>
+					<td>expresión$</td>
+					<td>El símbolo $ indica el final del String. En este caso el String debe contener la expresión al final.</td>
+				</tr>
+				<tr>
+					<td>[abc]</td>
+					<td>Los corchetes representan una definición de conjunto. En este ejemplo el String debe contener las letras a ó b ó c.</td>
+				</tr>
+				<tr>
+					<td>[abc][12]</td>
+					<td>El String debe contener las letras a ó b ó c seguidas de 1 ó 2</td>
+				</tr>
+				<tr>
+					<td>[^abc]</td>
+					<td>El símbolo ^ dentro de los corchetes indica negación. En este caso el String debe contener cualquier carácter excepto a ó b ó c.</td>
+				</tr>
+				<tr>
+					<td>[a-z1-9]</td>
+					<td>Rango. Indica las letras minúsculas desde la a hasta la z (ambas incluidas) y los dígitos desde el 1 hasta el 9 (ambos incluidos)</td>
+				</tr>
+				<tr>
+					<td>A|B</td>
+					<td>El carácter | es un OR.  A ó B</td>
+				</tr>
+				<tr>
+					<td>AB</td>
+					<td>Concatenación. A seguida de B</td>
+				</tr>
+			 </table>
+
+
+		<h3>Cuantificaciones</h3>
+			<table>
+				<tr>
+					<td>{X}</td>
+					<td>Indica que lo que va justo antes de las llaves se repite X veces</td>
+				</tr>
+				<tr>
+					<td>{X,Y}</td>
+					<td>Indica que lo que va justo antes de las llaves se repite mínimo X veces y máximo Y veces. También podemos poner {X,} indicando que se repite un mínimo de X veces sin límite máximo.</td>
+				</tr>
+				<tr>
+					<td>*</td>
+					<td>Indica 0 ó más veces. Equivale a {0,}</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>Indica 1 ó más veces. Equivale a {1,}</td>
+				</tr>
+				<tr>
+					<td>?</td>
+					<td>Indica 0 ó 1 veces. Equivale a {0,1}</td>
+				</tr>
+			 </table>
+
+		<h3>Metacaracteres</h3>
+			<table>
+				<tr>
+					<td>\d</td>
+					<td>Dígito. Equivale a [0-9]</td>
+				</tr>
+				<tr>
+					<td>\D</td>
+					<td>No dígito. Equivale a [^0-9]</td>
+				</tr>
+				<tr>
+					<td>\s</td>
+					<td>Espacio en blanco. Equivale a [ \t\n\x0b\r\f]</td>
+				</tr>
+				<tr>
+					<td>\S</td>
+					<td>No espacio en blanco. Equivale a [^\s]</td>
+				</tr>
+				<tr>
+					<td>\w</td>
+					<td>Una letra mayúscula o minúscula, un dígito o el carácter _Equivale a  [a-zA-Z0-9_]</td>
+				</tr>
+				<tr>
+					<td>\W</td>
+					<td>Equivale a [^\w]</td>
+				</tr>
+				<tr>
+					<td>\b</td>
+					<td>Límite de una palabra.</td>
+				</tr>
+			</table>
 
 	 </article>
+
+	<article><h2>Captura Excepciones</h2>
+		<img src="Fotos/Java excepciones herencia.JPG">
+
+		<h3>Try Catch Finally</h3>
+
+			<p class="Java">
+			<b>try</b>{<br>
+			&nbsp; &nbsp; <i>//Código que puede lanzar una excepción</i><br>
+			}<b>catch</b>(Exception error){<br>
+			&nbsp; &nbsp;<i>//Código que se ejecutará en caso de error</i><br>
+			}<b>finally</b>{<br>
+			&nbsp; &nbsp; <i>//Código que se ejecutará siempre </i><br>
+			}</p>
+
+
+		<h3>Delegacion</h3>
+			<p>La excepcion se manda quien llamo al metodo</p>
+			<p>Si la excepcion hereda de la clase IOException, el que llama al metodo esta obligado a capturarla y tratarla</p>
+
+			<p class="Java">
+			<b>public String</b> leerFichero(BufferedReader fichero) throws IOException {<br>
+	    	<b>String </b>linea = fichero.readLine();<br>
+			<b>return</b> linea;<br>
+			}</p>
+
+		<h3>Lanzamiento excepciones <b>throw</b></h3>
+			<p class="Java">
+				<b>try</b>{<br>
+     			&nbsp; &nbsp;<i>//código que se va a ejecutar</i><br>
+     			<b>throw new </b>Clase_de_error(mensaje);<i>//lanzamiento de error</i><br>
+				}<b>catch</b>(clase_de_error){<br>
+     			&nbsp; &nbsp;<i>//código que se va a ejecutar si hay error</i><br>
+				}
+			</p>
+
+		<h3>Creacion clases de error</h3>
+			<p>Añadir una nuevla clase con el nombre de la excepcion</p>
+			<p>Hacer que la clase herede de Excepcion,IOException,RuntimeException</p>
+			<p>Crear una variable en la que se almacene el codigo del error</p>
+			<p>Constructores: uno vacio y otro para iniciar la caraivle con el posible mensaje</p>
+			<p>Sobrescribir el metodo <b>getMenssage</b> para devolver el error producido en la clase</p>
+			
+	 </article>
+
+
+
 
 
 	
