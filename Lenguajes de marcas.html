@@ -568,7 +568,7 @@
 
 <section>  <h1> UF2 </h1> <!--  ssssssssssssssssssssssssssssssss   UF2    ssssssssssssssssssssssssssssssssssssssssssssssssss -->	
 
-	<article> <h2> RSS </h2>
+	<article> <h2>RSS</h2>
 
 		<h3>  Estructura </h3> 
 			<p>Primero siempre hay que poner la linea de XML y la segunda siempre es la del RSS version etc. Despues se abre la de channel y al final se cierran tanto channel como RSS</p>
@@ -597,8 +597,65 @@
 	 </article>
 
 
+	<article> <h2>XSL <i>transformacion de XML</i></h2>
+		<p>W3C creo tres especificaciones para el XSL:</p>
+		<ul>
+			<li><b>XSLT</b> lenguake XML para transformar los XML a otras sistanxis</li>
+			<li><b>XSL-FO</b> lenguaje XML para crear transforamciones visuales, pasar a PDF etc.<i> Esto no caen en el examen</i></li>
 
-	<article> <h2> XPATH</h2>		
+		</ul>
+	 	
+	 </article>
+
+	<article> <h2>XSLT</h2>
+		<p>Lenguaje XML, espacio de nombres XSL.</p>
+
+		<h3>Conversion</h3>
+			<img src="Fotos/XSLT.JPG">
+
+		<h3>Estructura</h3>
+			<img src="Fotos/XSLT estructura.JPG">
+
+		<h3>Elemtos</h3>
+			<h2>xsl:stylesheet</h2>
+				<p>Elemento raiz de la hoja, especifica la version y el espacio de nombres.</p>
+				<img src="Fotos/xslt stilesheet.JPG">
+
+			<h2>xsl:output</h2>
+				<p>Formato de salida. El omit es para que quite la definicion al princpio del XML</p>
+				<img src="Fotos/xslt output.JPG">
+
+			<h2>xsl:template</h2>
+				<p>Plantilla con las acciones a aplicar</p>
+
+			<h2>xsl:value-of</h2>
+				<p>Devuelve el valor de un nodo en concreto</p>
+				<img src="Fotos/xslt value of.JPG">
+
+			<h2>xsl:for-each</h2>
+				<p>Para recorrer los nodos como si fuera un bucle</p>
+
+			<h2>xsl:sort</h2>
+				<p>ordena los nodos dependiendo del criterio. en este caso de menos a mayor</p>
+				<img src="Fotos/xslt sort.JPG">
+	 	
+			<h2>xsl:if</h2>	
+				<p>comprobaciones condicionales</p>
+				<img src="Fotos/xslt if.JPG">
+
+			<h2>xsl:choose</h2>
+				<p>Permnite elegir entre diferentes opciones</p>
+				<img src="Fotos/xsl choose.JPG">
+
+
+	 </article>
+
+	<article><h2>XSL-FO</h2>
+		<p>Es una aplicacion JAVA dentro del codigo Apache que, entre sus tareas principales, se encarga de coger un documento XSL-FO de entrada para poder generar una salida en formato diferente, como un PDF</p>
+		<img src="Fotos/xsl-fo.JPG">
+	 </article>
+
+	<article> <h2>XPATH</h2>		
 		<p>Lenguaje de consulta bastante sencillo, para recorrer el arbol de nodos XML.</p>
 		<p>Disenado para acceder, transformar y dar formato de salida a documentos XML</p>
 
@@ -617,9 +674,64 @@
 			<p class="XML"><b>/pokedex/pokemon[caracteristicas/peso<15 and caracteristicas/peso/@unidad="kg"]/nombre</b> </p>
 			<p class="XML"><b>/pokedex/pokemon/caracteristicas[altura>1]/peso</b></p>
 			<p class="XML"><b>/pokedex/pokemon[tipoPokemon/tipo="Normal"]/debilidades </b></p>
-</b>
+
 
 	 </article>
+
+
+	<article><h2>XQuery</h2>
+		<p>Permite estraer consultas y procesar la informacion</p>
+		<p>diferencia entre dos partes, una parecida a SQL ya que es un lenguaje orientado a bases de datos, otra es como el XPath</p>
+		<p>Es un lenguaje de expresiones, mismos datos primitivos que XPath, mismos elementos, elemento raiz etc.</p>
+
+		<h3>Expecificos de XQuery:</h3>
+			<ul>
+				<li><b>doc()</b> permite leer documento XML. Devuelve el nodo raiz</li>
+				<li><b>FLWOR</b> son un conjunto de funciones:</li>
+					<ul>
+						<li><b>for</b> indica con un rango los valores a tratar</li>
+						<li><b>let</b>permite declarar variables para que podamos asignarles valores. Parecido a un ARRAY</li>
+						<li><b>where</b>va junto con FOR, para meter condiciones</li>
+						<li><b>order by</b></li>
+						<li><b>return</b></li>			
+					</ul>
+				<li><b>otras</b></li>
+					<ul>
+						<li><b>declare function</b> permite declarar funciones</li>
+						<li><b>if...else</b>tipico condicional</li>
+					</ul>
+			</ul>
+
+		<h3>Funciones predefinidas</h3>
+			<h4>Texto</h4>
+				<ul>
+					<li><b>uppercase</b></li>
+					<li><b>substgring</b></li>
+					<li><b>contains</b></li>				
+				</ul>
+			<h4>numeros</h4>
+				<ul>
+					<li><b>max</b></li>
+					<li><b>sum</b></li>
+					<li><b>avg</b></li>					
+				</ul>
+			<h4>fecha</h4>
+				<ul>
+					<li><b>current-date</b></li>
+					<li><b>current-time</b></li>					
+				</ul>
+			<h4>nodos XML</h4>
+				<ul>
+					<li><b>root</b>devuelve el nodo raiz</li>
+				</ul>
+
+		<h3>Ejemplos</h3>
+			<img src="Fotos/XQery ejem1.JPG">
+			<img src="Fotos/XQery ejem2.JPG">
+			<img src="Fotos/XQery ejem3.JPG">
+			<img src="Fotos/XQery ejem4.JPG">
+	 </article>
+
 
 
  </section>
