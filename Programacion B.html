@@ -333,7 +333,7 @@
 			 <h4>currentTimeMillis()</h4>
 			 <h4>exit()</h4>
 			 <p>Termina el programa JAVA</p>	
-	</article>
+	 </article>
 
 
 	<article> <h2>Clase Console</h2>
@@ -344,7 +344,7 @@
 
 			<h3> Algunos metodos:</h3>
 			<p class="Java"> <b>readLine()</b>, <b>readPassword()</b></p>
-	</article>
+	 </article>
 
 
 	<article> <h2>Clase Scanner</h2>
@@ -356,7 +356,7 @@
 
 
 			</p>
-	</article>
+	 </article>
 
 
 	<article> <h2>Clase Arrays </h2>
@@ -413,7 +413,7 @@
 					<td>hace que el subproceso actual espera hasta que otro subproceso invoque al metodo notify(). O haya transcurrido un periodo de tiempo determinado</td>
 				</tr>
 			</table>
-	</article>
+	 </article>
 
 
 	<article> <h2>Clase String</h2>
@@ -462,7 +462,7 @@
 						<td>devuelve la cadena de caracteres que resulta de convertir la variable del tipo que se pasa por parametro</td>
 					</tr>
 				</table>
-	</article>
+	 </article>
 
  
 	<article><h2>Collection</h2>
@@ -716,7 +716,7 @@
 					<i>Codigo </i><br>
 				}
 			</p>
-	</article>
+	 </article>
 
 
 	<article><h2>Clases y metodos genericos</h2>
@@ -755,7 +755,7 @@
 			<h4>Comodines</h4>
 				<p>Se trata de ir siempre a la parte superior de la jerarquia. List< Number> es mas restrictivo que List< ?extends Number></p>
 				<p class="Java"> public static void process(List < ? extends Number> list){/*...*/}</p>
-	</article>
+	 </article>
 
 
 	<article><h2>Expresiones regulares de busqueda</h2>
@@ -864,6 +864,7 @@
 
 	 </article>
 
+
 	<article><h2>Captura Excepciones</h2>
 		<img src="Fotos/Java excepciones herencia.JPG">
 
@@ -906,18 +907,66 @@
 			<p>Constructores: uno vacio y otro para iniciar la caraivle con el posible mensaje</p>
 			<p>Sobrescribir el metodo <b>getMenssage</b> para devolver el error producido en la clase</p>
 			
+	 </article>	
+
+
+	<article><h2>Lectura y escritura de archivos </h2>
+			<p>Primero se crea un objeto <b>File</b> para manejar las carpetas o crear los arvhivos.<br>
+				Despues se crean los canales de entrada o salida.</p>
+			<p>A los archivos se puede acceder de forma secuelcial o aleatoria</p>
+
+		<h3>Clases basicas</h3>
+
+			<h4>Class File</h4>
+				<p>Constructores <br>
+					-File(String nombre);<br>
+					-File(File ruta, String nombre);<br>
+					-File(String ruta, String nombre);<br>
+				</p>
+
+			<p>Las clases FileImputStream realizan operaciones de lectura y escritura de bajo nivel</p>
+			<h4>flujos de entrada</h4>
+				<img src="Fotos/Java imputstream.JPG">
+
+			<h4>flujos de salida</h4>
+				<img src="Fotos/jaca outputstream.JPG">
+		
+
+			<p><b>Clase BufferedReader</b> raliza operaciones de lectura pro bloques, es mas eficiente</p>
+
+		<h3>Lectura aleatoria</h3>
+			<h4>Constructores</h4>
+				<p><b>RandomAccesssFile(String fichero, String modoAcceso)</b></p>
+				<p><b>RandomAccesssFile(File f, String modoAcceso)</b></p>
+
+			<h4>Modo acceso</h4>
+				<p><b>r</b> solo lectura</p>
+				<p><b>rw</b>lectura y escritura</p>
+
+			<h4>Lecxtura y escritura</h4>
+				<p><b>DatainputStream</b></p>
+				<p><b>DataOutputStream</b></p>
+
+			<h4>Metodos de RandomAccessFile</h4>
+				<p>long <b> getFilePointer()</b> Devuelve posicion actual del puntero </p>
+				<p>void <b> seek(long posicion)</b> coloca el puntero del fichero en posicion detrerminada</p>
+				<p>long <b> length()</b> devuelve el tamano del fichero en bytes </p>
+				<p>int <b>skipBytes(int desplazamiento)</b> desplaza del puntero el numero de bytes indicado desde la posicion actual</p>
+
+		<h3>Serializacion</h3>
+			<p>utiliza la interfaz <b>Serializable</b>. Solo hay que indicarle a una clase que la implemente. Indica que son subsentibles de convertirlas en bytes</p>
+			<p>Para guardar objetos, los pasa a bytes</p>
+			<img src="Fotos/java serializable.JPG">
+			<h4>Clases que se neceitan</h4>
+				<p><b>ObjetOutputStream</b> --> writeObject()</p>
+				<p><b>ObjetInputStream</b> --> readObject()</p>
+
+			<p>Ojo con el metodo readObject() porque lo que devuelve es un objeto de la calse Object, hay que hacerle un casting  para convertirlo en el objeto que necesitemos.  <br><img src="Fotos/java readobject.JPG"></i></p>
+			
+		
 	 </article>
 
-
-
-
-
-	
-</section><!--  SSSSS    Fin de  UF5  SSSSS -->
-
-
-
-
+ </section><!--  SSSSS    Fin de  UF5  SSSSS -->
 
 <section >  <h1> UF6 Introduccion a la persistencia de BD</h1>
 
