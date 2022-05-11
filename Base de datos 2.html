@@ -29,20 +29,18 @@
 				<a href ="https://www.oracle.com/es/database/technologies/appdev/sqldeveloper-landing.html"> Estandar oficial  SQL  </a><br>	
 
 
+	</header> 
 
-	 </header> 
 
 
 <!--  ========================================    Menu navegacion   ================================================== -->
-	<nav>  
+	<nav> <h2>  <a href ="index.html"> Menu </a> </h2>   
+	</nav>
 
-		<h2>  <a href ="index.html"> Menu </a> </h2>    
-				
-	 </nav>
+
 
 <!--  ========================================    UF2   ====================================================== -->
-
-	<section> <h1>UF2 SQL</h1>
+	<section> <h1>UF2 SQL <i>(ya aprobada)</i></h1>
 
 		<article><h2> DDL <i>Lenguaje de definicion de datos</i></h2>
 
@@ -425,13 +423,10 @@
 
 
 
-
-
-
 <!--  ========================================    UF3   ====================================================== -->
-	<section>	 <h1> UF3 ORACLE SQL</h1><hr>
+	<section><h1> UF3 ORACLE SQL</h1>
 
-	 	<article>  <h2>Usuarios</h2>
+	 	<article> <h2>Usuarios</h2>
 
 
 		 	<h3>Sentencia importante</h3>
@@ -1026,4 +1021,141 @@
 	 	 </article>
 
 
-	 </section><!--  ===============   FINAL DE  UF3   =======
+	 	<article> <h2>Triggers</h2>
+	 		<p>Se ejecutan cuando se intenta modificar los datros a traves de sentencia DML(<i>insert, update, delete</i>)</p>
+
+	 		<h3>Sintaxis</h3>
+	 			<p>Si no se pone FOR EACH ROW, solo cogera la primera linea que lo ha hecho saltar</p>
+	 			<img src="Fotos/Sql triggers.JPG">
+
+
+	 		<h3> OLD y NEW</h3>
+	 			<p>En las modificaciones de fila, el valor antes de ser modioficado(:OLD) y despues(:NEW)</p>
+	 			<p>En la instroduccion de valores nuevos se hace referencia solo al valor nuevo (:NEW)</p>
+	 			<p>En los borrados se hace referencia al viejo (:OLD)</p>
+	 			<p>En la condicion WHEN de los trigers se deben utilizar quitando los dos puntos (NEW , OLD)</p>
+
+
+	 		<h3>Ejemplos</h3>
+		 		<img src="Fotos/sql triger ejem 1.JPG"><br>
+		 		<img src="Fotos/sql triggers  ejeml 2.JPG">
+
+
+	 	 </article>
+
+
+	 	<article> <h2>Cursores</h2>	
+	 		<p>Son SELECTS almacenados con un nombre</p>
+	 		<p>Se usan para hacer un SELECT de varias filas y despues poder ir recorriendolas de una en una. Un SELECT normal no deja filtrar muchas filas, solo una.</p>
+	 		<p>NO SE COMPILAN</p>
+
+
+	 		<h3>Ejemplo</h3>
+		 		<img src="Fotos/SQL Cursos ejemplo1.JPG">
+
+		 		<p>Para usar los cursores siempre hay que usar OPEN y CLOSE, salvo que se use un FOR, con el FOR  se supone que ORACLE lo hace automaticamente.</p>
+		 		<img src="Fotos/SQL Cursos ejemplo2.JPG">
+
+		 		<p>Se puede comprobar si un cursor esta abierto.</p>
+		 		<img src="Fotos/SQL Cursos ejemplo3.JPG">
+		 		
+	 	 </article>
+
+	</section><!--  ===============   FINAL DE  UF3   ======= -->
+
+
+
+
+<!-- ========================================    UF4   ====================================================== -->
+	<section><h1> BBDD objeto-relacionales</h1>
+
+		<article> <h2>Definicion</h2>
+
+				<p>Evoluvio desde el modelo realacional hasta una base de datos hibrida(Relacional y Objetos).</p>
+				<p>La mayor diferencia con la relacional es la existencia de tipos de objetos.</p>
+				<p>Los tipos se crean mediatne sentencias <b>ODL</b> y son la base del desarrollo de las BBDD objeto-relacionales.</p>
+
+
+			<h3>Ventas</h3>
+				<ul>
+					<li>Admite tipos de datos abstractos como los objetos</li>
+					<li>REsuelven debiliodades de las Bases de Datos Relacionales</li>
+					<li>De los tipos basicos de datos se pueden derivar otros nuevos</li>
+				</ul>
+
+
+			<h3>Desventas</h3>
+				<ul>
+					<li>No todos los SGDB soportan las extensiones objeto-relacional</li>
+					<li>El programador debe saber dos tipos de sintaxis</li>
+					<li>Mayor complejidad y coste</li>
+				</ul>
+
+
+			<h3>Tipos de objetos</h3>
+				<p>Un tipo de objeto representa una entidad del mundo real.
+					<ul>
+						<li>Tienen un nombre</li>
+						<li>Tienen unos atributos.Cada atributo puede ser de un tipo de datos basico o de un tipo de usuario.</li>
+						<li>Tienen metodos que definen las operaciones sobre los datos del tipo. Pueden ser procedimientos o funciones.</li>
+					</ul></p>
+				<p>Los tipos de objetos pueden interpretarse como plantillas.</p>
+
+
+			<h3>Principales caracteristicas</h3>
+				<ul>
+					<li>Encapsulamiento</li>
+					<li>Herencia</li>
+					<li>Polimorfismo</li>
+				</ul>
+
+
+			<h3>Estructura del codigo</h3>
+				<p>Una <b>especificacion</b> o interfaz publica que consta de la declaracion de los atributos y opcional, la definicion de los metodos</p>
+				<p>Un <b>cuerpo</b>(parte privada) donde se implementan los metodos definidos en la especificacion.Si no tiene metodos definidos no hace falta definir el cuerpo</p>
+
+
+		 </article>
+
+
+		 <article> <h2>Estructura</h2>
+
+		 	<h3>Objeto</h3>
+		 		<img src="Fotos/SQL estructura objeto.JPG">
+
+
+		 	<h3>Instanciar el objeto</h3>
+		 		<img src="Fotos/SQL instanciar objeto.JPG">
+
+
+		 	<h3>Crear objetos con procedimientos</h3>
+		 		<p>Primero se declaran y en un bloque a parte (el cuerpo) se definen</p>
+		 			<h4>Declaracion (Type ... AS OBJECT)</h4>
+		 				<img src="Fotos/SQL declarar objeto.JPG">
+
+		 			<h4>Definicion(TYPE BODY.... AS)</h4>
+		 				<img src="Fotos/SQL definir objeto.JPG">
+
+
+		 	<h3>Llamar al metodo</h3>
+		 		<img src="Fotos/SQL llamar objeto.JPG">
+
+		 	<h3>Variable objeto dentro de un objeto</h3>
+		 		<h4>Declarar</h4>
+		 			<img src="Fotos/SQL varaible objeto en objeto.JPG">
+		 			<p>Solo "direc" trendra acceso a los parametros de direccion, "persona" no.</p>
+
+		 		<h4>Instanciar</h4>
+		 			<img src="Fotos/SQL objeto declarar.JPG"><br>
+		 			<img src="Fotos/SQL objeto  instanc1.JPG"><br>
+		 			<img src="Fotos/SQL objeto  instanc2.JPG"><br>
+
+	 		<h3>Crear tabla objetos y meter datos</h3>
+	 			<img src="Fotos/SQL objeto tablas.JPG">
+
+		  </article>
+
+
+
+	</section>
+
