@@ -225,8 +225,6 @@
 <!--  ========================================    UF2 Optimizacion del software   ================= -->
 	<section> <h1> UF2 Optimizacion del software </h1><hr>
 		
-
-
 		<article> <h2> Planificacion de pruebas</h2>
 
 			<p>Sera necesario definir <b>PRECONDICIONES</b> y <b>POSTCONDICIONES</b></p>
@@ -258,7 +256,7 @@
 					-Clases de equivalencia<br>
 					-Analisis de valores limite
 				</p>
-		</article>
+		 </article>
 
 
 		<article> <h2> Estrategias de pruebas de software. Automatizadion de pruebas</h2>
@@ -329,7 +327,7 @@
 						<li><b>Prueba de resistencia(stress)</b> se lleva el sistema al limite de los recursos, sometiendolo a cargas masivas. El objetivo es comprobar los extremos del sistema.</li>
 					</ul>
 				</p>
-		</article> 
+		 </article> 
 
 
 		<article> <h2> JUnit</h2>
@@ -397,7 +395,8 @@
 						<li> Para volver a la lista de valores que testear, se incluye en el metodo la etiqueta <b>@Parameters</b>.</li>
 					</ul>
 				</p>		
-		</article>
+		 </article>
+
 
 
 		<article><h2> Pruebas de codigo: cobertura, valores limite, clases de equivalencia</h2>
@@ -456,25 +455,230 @@
 			<h3> Analisis de valores limite. Casos de prueba</h3>
 				<p>Se trata de hacer un analisis en todos los valores limites  y por fuera de los limites.</p>
 
+
 			<h3>Pruebas funcionales, pruebas estructurales y pruebas de refgresion</h3>
-				<p>Las pruebas funcionales se definen a partir de las caracteristicas descritas en la documentacion</p>
-				<p>Son pruebas de caja negra</p>
+				<p>Las pruebas funcionales se definen a partir de las caracteristicas descritas en la documentacion.Son pruebas de caja negra</p>
 				<p>Las pruebas estructurales nos indican si las diferentes estrategias de prueba se han llevado a cabo correctamente. Si todas las pruebas encajan la arquitectura el software es correcta</p>
-				<p>Las pruebas de regresion cosisten en volver parte del sistema despues de haberlo modificado.</p>
-				<p>Estas pruebas se realizan sobre componentes ya probados.</p>
+				<p>Las pruebas de regresion cosisten en volver parte del sistema despues de haberlo modificado.Estas pruebas se realizan sobre componentes ya probados.</p>
+			
+
+			<h3>Medidas de calidad</h3>
+				<p>Principio anios  80, Maurice Halstead, desarrolla un conjunto de normas y metricas que sustentan el calculo de palabvras clave y variables del codigo</p>
+				<p>Esta basada en contar los operadores y operandos que hau en un programa: </p>
+				<ul>
+					<li><b>n1</b> numero de operadores unicos</li>
+					<li><b>n2</b>numero de operandos unicos</li>
+					<li><b>N1</b>numero total de ocurrencias de operadores</li>
+					<li><b>N2</b>numeros total de ocurrencias de operandos</li>
+				</ul>
+
+				<h4>Calculos</h4>
+				<ul>
+					<li><b>Longitud:</b>  N = N1 + N2   <i>medida del tamanio del programa</i></li>
+					<li><b>Volumen:</b>  N * log2(n),  <i>donde n= n1 + n2</i></li>
+					<li><b>Dificultad:</b>  D =((n1*n2) / (n2*2))   <i>directamente proporcional al numero de operadores unicos</i></li>
+					<li><b>Esfuerzo:</b> E = V * D <i>Esfuerzo por entender un programa o mantenerlo, proporcional al volumen y a su dificultad</i> </li>
+					<li><b>Nivel:</b> L = 1 / D <i>Inversamente proporcional a su dificultad</i></li>
+				</ul>
+
 
 			<h3>Herramientas de depuracion de codigo</h3>
 				<h4>linter</h4>
 				 <a href="https://plugins.jetbrains.com/plugin/12496-go-linter"> El enlace es para el JetBrains.</a>
+		 </article>
 
 
-		</article>
+
+		<article> <h2>Tecnica refactorizacion</h2>
+
+			<h3>Cuando refactorizar(bad smell)</h3>
+				<ul>
+					<li>Codigo duplicado(duplicated code)</li>
+					<li>metodos muy largos(long method)</li>
+					<li>clases muy grandes(large class)</li>
+					<li>listas de paramet rso extensa(long parameter list)</li>
+					<li>cambio divergente(divergente change)</li>
+					<li>cirugia a tiro pistola(shotgun surgery)</li>
+					<li>envidia de funcionalidad(feature envy)</li>
+					<li>clase de solo datos(data class)</li>
+					<li>legado rechazado(refused bequest)</li>
+				</ul>
 
 
+			<h3>Aspectos importantes</h3>
+				<p>Se reestructura el codigo sin que cambie el como funciona</p>
+				<p>El IDE conoce las realciones entre metodos y clases, deberia de encargarse de propagar los cambios</p>
+				<p>Antes de refactoriuzar definir bien los casos de prueba:
+					<ul>
+						<li>Automaticos</li>
+						<li>reportar los casos de fallos y errores</li>
+						<li>deben de poder ejecutarse de forma independiente</li>
+					</ul>
+				</p>
+				<p>Muy importante documentarlo todo</p>
+			
+			<h3>Prueba unitarias</h3>
+				<p>Importrancia de las pruenbas al refactorizar</p>
+					<ul>
+						<li>Nos previenen las pruebas de regresion</li>
+						<li>Facilitan refactoriar</li>
+						<li>Mejoran como esta disenada la implementacion</li>
+					</ul>
+				<p>Lo dificil no es picar el codigo, sino tener muy claro que es lo que tiene que hacer</p>
+
+			<h3>Ventajas de refactorizar</h3>
+				<ul>
+					<li>facilita la comprension del cogido</li>
+					<li>favorece detectar errores</li>
+					<li>mayor rapideza en la programacion</li>
+					<li>mayor calidad durante el proceso</li>
+				</ul>
+
+			<h3>Desventajas</h3>
+				<ul>
+					<li>Migraciones implican cambios estructurales de datos</li>
+					<li>El cambio de interfaz sin acceso al cogido fuente puede ser problematico</li>
+				</ul>
+		 </article>
+
+
+		<article><h2>Patrones de dieño</h2>
+
+			<h3>Estructura</h3>
+				<ul>
+					<li>Nombre</li>
+					<li>Problema</li>
+					<li>Solucion</li>
+					<li>Consecuencias</li>
+				</ul>
+
+
+			<h3>Tipos</h3>
+				<ul>
+					<li>Estructurales</li>
+					<li>Comportamiento</li>
+					<li>Creacionales</li>
+				 </ul>
+				
+
+			<h3> Mas importantes</h3>
+				<a href="https://refactoring.guru/es"> Web guapa</a>
+			
+		 </article>
+
+
+		<article> <h2>Control de versiones</h2>
+
+			<h3>Estructura</h3>
+				<ul>
+					<li>repositorio</li>
+					<li>revision o version</li>
+					<li>etiqueta o rotular(tag)</li>
+					<li>tronco(trunk)</li>
+					<li>rama(Branch)</li>
+					<li>desplegar(checkout)</li>
+					<li>confirmar(commit o check-in)</li>
+					<li>exportacion(export)</li>
+					<li>importacion</li>
+					<li>actualizar(update)</li>
+					<li>fusion(update)</li>
+					<li>conflicto</li>
+					<li>resolver conflicto</li>
+				</ul>
+
+			<h3>herramientas</h3>
+				<ul>
+					<li>Git (Github)</li>
+					<li>subversion (en eclipse)</li>
+			 	</ul>
+
+		 </article>
+
+
+		<article><h2>Documentacion</h2>
+		 	<img src="Fotos/IDES docu.JPG">
+
+		 	<h3>Javadoc(en Eclipse)</h3>
+		 		<h4> Etiquetas</h4>
+		 			<ul>
+		 				<li><b>@author</b>autor de la clase</li>
+		 				<li><b>@version</b>version de la clase</li>
+		 				<li><b>@see</b>referencia otra clase</li>
+		 				<li><b>@param</b>descripcion del parametro</li>
+		 				<li><b>@return</b>decripcion de lo que devuelve</li>
+		 				<li><b>@throws</b>decripcion de la excepcion que puede propagar</li>
+		 				<li><b>@since</b>numero version producto</li>
+		 			</ul>
+
+		 </article>
 
 	</section>
 
+<!--  ========================================    UF3 UML   ================= -->
+	<section><h1>UF3 UML (diseño orientado a objetos)</h1>
 
+		<article><h2>Diagramas</h2>
+
+			<h3>Campos de aplicacion</h3>
+				<ul>
+					<li>Diagrama de casos de uso</li>
+					<li>Diagrama de actividad</li>
+					<li>Diagrama de estado</li>
+					<li>Diagrama de secuencia</li>
+					<li>Diagrama de comunicacion</li>
+					<li>Diagrama de tiempos</li>
+					<li>Diagrama de vista global de inteccion</li>
+				</ul>
+
+
+
+			<h3>Diagrama de casos de uso</h3>
+				<p>Es importate tenerlo controlado</p>
+
+				<h4>Objetivos</h4>
+					<ul>
+						<li>Definir requisitos funcionales y operatrivos</li>
+						<li>Descriipcion ubteraccion usuario/sistema</li>
+						<li>Base para validacion dew pruebas</li>
+					</ul>
+
+
+				<h4>Actores</h4>
+					<ul>
+						<li>Externos al sistema</li>
+						<li>interactuan directamente</li>
+						<li>Representan roles de personas</li>
+						<li>Nombre con funcion que desenpenan</li>
+						<li>Una persona puede desempenar varios roles</li>
+					</ul>
+
+
+
+
+				<h4>Identificar casos de uso</h4>
+					<img src="Fotos/casos dew uso tabla.JPG">
+
+
+
+				<h4>Relaciones</h4>
+					<img src="Fotos/casos de uso relaciones2 .jpg">
+					<img src="Fotos/casos dew uso relaciones.JPG">
+					<p><b>Include</b> obliga a usar los metodos</p>
+					<p><b>Extend</b> amplia los casos de uso, no es necesario hacer lo que se extiende</p>
+
+
+
+
+				<h4>Ejemplo</h4>
+					<img src="Fotos/caso de uso.jpg">
+
+
+
+
+
+
+		</article>
+	</section>
 
 
 </body><!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
