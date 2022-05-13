@@ -618,6 +618,7 @@
 	<section><h1>UF3 UML (diseño orientado a objetos)</h1>
 
 		<article><h2>Diagramas</h2>
+			<img src="Fotos/diagramas arbol.JPG">
 
 			<h3>Campos de aplicacion</h3>
 				<ul>
@@ -630,20 +631,145 @@
 					<li>Diagrama de vista global de inteccion</li>
 				</ul>
 
+			<h3>Diagramas de comportamiento</h3>
+				<p>permiten modelar la informacion de los diagramas de clases.</p>
+				<h4>Se clasifican en:</h4>
+				<ul>
+					<li><b>Diagrama de casos de uso</b> describe el comportamiento del sistema desde el punto de vista del usuario</li>
+					<li><b>diagrama de actividad</b> parecido al daigrama de flujo, muestra pasos, puntos de decision y bifurcaciones</li>
+					<li><b>diagrama de estado</b> estados de un objeto y transiciones de uno a otro</li>
+					<li><b>Diagrama de secuencia</b> interaccion de unos objetos con otros</li>
+					<li><b>diagrama de comunicacion</b> iteraciones entre elementos en tiempo de ejecucion</li>
+					<li><b>diagrama de tiempos</b>define comportamiento de objetos a una escala de tiempo</li>
+					<li><b>diagrama de vista global de interaccion</b>cooperacion entre otros diagramas de interaccion</li>
+
+				</ul>
+
+		 </article>
 
 
-			<h3>Diagrama de casos de uso</h3>
-				<p>Es importate tenerlo controlado</p>
+		<article><h2>Diagrama de clases</h2>
 
-				<h4>Objetivos</h4>
-					<ul>
-						<li>Definir requisitos funcionales y operatrivos</li>
-						<li>Descriipcion ubteraccion usuario/sistema</li>
-						<li>Base para validacion dew pruebas</li>
-					</ul>
+			<p>Una representacion grafica y estatica de las estructura general de un sistema, mostrando cada una de las clases y sus relaciones representadas en bloques</p>
+
+			<h3>Objetos</h3>
+				<p>Es la instancia de una clase</p>
+				<p>Esta constituido por un conjunto de atributos, metodos e identidad propia</p>
+				<p> propiedades clave:
+				<ul>
+					<li><b>abstraccion</b> las caracteristicas y comportamientos del objeto</li>
+					<li><b>escapsulacion</b> ocultar los metodos etc del exterior y mostrar solo lo necesario</li>
+					<li><b>modularidad</b></li>
+					<li><b>polimorfismo</b>dos instancias presistentes de dsiteintas clases puede responder a la misma llamada a metodos del mismo nombre, cada uno con distinto comportamiento encapsulado. interfaz comun, herencia</li>
+					<li><b>tipificacion</b>definicion precisa de ub objeto</li>
+					<li><b>concurrencia</b>propiedad de un objeto que estra activo respecto de otro que no lo esta</li>
+					<li><b>presistencia</b>propeidad de un objetom, su existencia cuando el programa se cierra</li>
+				</ul></p>
+
+
+			<h3>Clases</h3>
+				<p>Son la unidad basica que contiene toda la informacion referente a un objeto.</p>
+				<img src="Fotos/end dess clase.JPG">
+
+
+			<h3>Atributos y metodos</h3>
+				<ul>
+					<li><b>+</b>Public</li>
+					<li><b>-</b>Private , solo la propia clase</li>
+					<li><b>#</b>Protected, tambien herencia</li>
+					<li><b>~</b>Package</li>
+				</ul>
+
+
+			<h3>Relaciones</h3>
+				<ul>
+					<img src="Fotos/end dess clase relaciones.JPG">
+					<li><b>0..1</b> cero o una vez</li>
+					<li><b>1</b></li>
+					<li><b>0..*</b></li>
+					<li><b>1..*</b></li>
+					<li><b>M..N</b></li>
+				</ul>
+
+
+			<h3>tipos de asociacion</h3>
+				<ul>
+					<li>Direccionales</li>
+					<li>Bidireccionales</li>
+					<li>Reflexivas</li>
+				</ul>
+
+
+			<h3>Clase asociacion</h3>
+				<p>Cuando una clase contiene informacion para la union entre dos clases</p>
+					<img src="Fotos/end dess clase asociacion.JPG">
+
+
+			<h3>Herencia</h3>
+				<img src="Fotos/end dess clase herencia.JPG">
+
+
+			<h3>Composicion</h3>
+				<p><b>Fuerte</b> <i>Rombo relleno</i>. los objetos estan constituidos por componentes. La supresion del objeto comporta la supresion de los componentes. Uno a varios<br>
+					<img src="Fotos/end dess clasecomposicion fuerte.JPG">
+				</p>
+
+				<p><b>Debil</b> <i>Rombo vacio</i>.  la destruccion del objeto no implica destruir los componentes que pueden estar compartidos con otros objetos<br>
+					<img src="Fotos/end dess clasecomposicion devil.JPG">
+				</p>
+
+
+			<h3>Dependencia</h3>
+				<p>una clase utiliza la otra<br>
+					<img src="Fotos/end dess clase dependencia.JPG">
+				</p>
+
+
+			<h3>Herramientas</h3>
+
+				<h4>Papyrus para Eclipse</h4>
+					<p>Es un plugin de codigo abierto</p>
+					<p>Caracteristicas:
+						<ul>
+							<li>Codigo acierto basado en el Eclipse</li>
+							<li>Proporciona entorno integrado para editar cualquier EFM(metamodelos)</li>
+							<li>Proporciona editores de diagramas para UML2 y SysML</li>
+							<li>Soporte de perfil de usuario</li>
+							<li>Formar de personalizacion potentes</li>
+						</ul>
+					</p>
+
+					<p>Solo hay que descargar el plugin y ejecutar el EXE</p>
+
+
+		 </article>
+
+
+		<article><h2>Diagrama de casos de uso</h2>
+
+			<p>Es importate tenerlo controlado</p>
+			<p>Modelan el sistema desde el puto de vista del usuario</p>
+			<p>Lebguaje sencillo, debera describir todas las formas de utilizar el sistema. Define todo el comportamiento del programa</p>
+
+			<h3>Objetivos</h3>
+				<ul>
+					<li>Definir requisitos funcionales y operatrivos</li>
+					<li>Descripcion iteraccion usuario/sistema</li>
+					<li>Base para validacion de pruebas</li>
+				</ul>
+
+			<h3>Elementos</h3>
+
+				<ul>
+					<li><b>actores </b>cualquier agente que interactua con el sistema</li>
+					<li><b>casos de uso </b> una unidad funcional del sistema. Sera inicado por un actor yt otros actores podran partricipar de el.</li>
+					<li><b>relaciones</b></li>
+					<li><b>sistema</b> delimitado por un rectangulo</li>
+				</ul>
 
 
 				<h4>Actores</h4>
+					<p>para poder intreradctuar con el sistema, hay que conocer la informacion dew dcada elemento y saber que y quien interactua con el sistema y que rol trandra.Puntos a la hora de definir actores:</p>
 					<ul>
 						<li>Externos al sistema</li>
 						<li>interactuan directamente</li>
@@ -653,32 +779,28 @@
 					</ul>
 
 
-
-
-				<h4>Identificar casos de uso</h4>
-					<img src="Fotos/casos dew uso tabla.JPG">
-
-
-
-				<h4>Relaciones</h4>
-					<img src="Fotos/casos de uso relaciones2 .jpg">
-					<img src="Fotos/casos dew uso relaciones.JPG">
-					<p><b>Include</b> obliga a usar los metodos</p>
-					<p><b>Extend</b> amplia los casos de uso, no es necesario hacer lo que se extiende</p>
+			<h4>Identificar casos de uso</h4>
+				<p>Sera necesario entender el funcionamiento de lsistema. Se documentan a traves de una plantilla.</p>
+				<img src="Fotos/casos dew uso tabla.JPG">
 
 
 
-
-				<h4>Ejemplo</h4>
-					<img src="Fotos/caso de uso.jpg">
+			<h4>Relaciones</h4>
+				<img src="Fotos/casos de uso relaciones2 .jpg">
+				<img src="Fotos/casos dew uso relaciones.JPG">
+				<p><b>Include</b> obliga a usar los metodos</p>
+				<p><b>Extend</b> amplia los casos de uso, no es necesario hacer lo que se extiende</p>
 
 
 
 
+			<h3>Ejemplo</h3>
+				<img src="Fotos/caso de uso.jpg">
+
+		 </article>
 
 
-		</article>
-	</section>
+	 </section>
 
 
 </body><!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ -->
