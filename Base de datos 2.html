@@ -1118,7 +1118,7 @@
 		 </article>
 
 
-		 <article> <h2>Estructura</h2>
+		<article> <h2>Estructura</h2>
 
 		 	<h3>Objeto</h3>
 		 		<img src="Fotos/SQL estructura objeto.JPG">
@@ -1156,6 +1156,89 @@
 		  </article>
 
 
+		<article> <h2>Herencia</h2>
+
+			<h3> Caracteristicas </h3>
+				<p>Para que un tipo pueda tener subtipos se debe declarar <b>NOT FINAL</b> la opcion predeterminada en ORACLE es <b>FINAL</b></p>
+				<p>Para que puedan existir objetos de un tipo, este debe ser <b>INSTANTIABLE</b>, en este caso esta es la opcion predeterminada si no se expecifica nada</p>
+				<p>Para hacerlo abstracto se hace con <b>NOT INSTANTIABLE</b></p>
+				<p><b>POLIMORFISMO</b> los subtipos puede redefinir los metodos del supertipo para adaptarlo a sus necesidades</p>
+				<p>Para crear un objeto que herede se usa <b>UNDER</b></p>
+				
+
+			<h3> Ejemplo 1</h3>
+				<h4>Declarar el objeto</h4>
+					<img src="Fotos/ORAcle OBJETO 1.JPG">
+
+				<h4>Declarar objetos que heredan</h4>
+					<img src="Fotos/ORAcle hereda.JPG">
+
+				<h4>Crear tablas que almacenen estos objetos</h4>
+					<img src="Fotos/ORAcle hereda tablas.JPG">
+
+
+				<h4>Meter valores en tablas</h4>
+					<img src="Fotos/ORAcle hereda tablas valores.JPG">
+
+
+
+			<h3>Ejemplo 2</h3>
+				<h4>declaracion</h4>
+					<img src="Fotos/ORAcle OBJETO ejem 2.JPG">
+
+				<h4>Crear tablas</h4>
+					<img src="Fotos/ORAcle OBJETO ejem 2 tablas.JPG">
+
+				<h4>Inserts</h4>
+					<img src="Fotos/ORAcle OBJETO ejem 2 inserts.JPG">
+
+		 </article>
+
+
+		<article> <h2>Referencias</h2>
+
+		 	<h3>Caracteristicas</h3>
+		 		<p>El tipo <b>REF</b> es un contenedor de un identificador de objeto (OID)</p>
+		 		<p>Es un puntero a un objeto. Su utilidad es apuntar a un objeto que ya existe y asi evitar tener quee duplicar la informacion</p>
+		 		<p>Permite implementar relaciones prescindiendo de las claves ajenas</p>
+		 	
+		 	<h3>Ejemplo</h3>
+
+		 		<h4>Declaracion</h4>
+			 		<img src="Fotos/ORAcle REF.JPG">
+				
+				<h4>Crear tablas</h4>
+					<img src="Fotos/ORAcle REF tablas.JPG">
+
+			 	<h4>Inserts con la referencia</h4>
+			 		<img src="Fotos/ORAcle REF insert.JPG">
+
+		 </article>
+
+
+		<article><h2>Tipos de datos coleccion</h2>
+			<h3>Caracteristicas</h3>
+				<p>Esta formado por un numero indefinido de elementos, todos del mismo tipo</p>
+				<p>Almacenar un conjuntos de tuplas en un unico atribulo, en forma de array o de tabla anidada</p>
+
+			<h3>Tipos</h3>
+				<h4>VARRAYs</h4>
+					<p>Coleccion ordenada de elemntos de tamano fijo</p>
+
+				<h4>Tablas anidadas</h4>
+					<p>(NESTED TABLES) coleccion no ordenada y de tamano varaible. Esto no se usa nada.</p>
+
+
+			<h3>Ejemplos</h3>
+
+				<h4>Crear el VARRAYs</h4>
+					<img src="Fotos/ORAcle colecion1.JPG">
+					<p>Array de maximo 5 elementos de VARCHAR2</p>
+
+				<h4>Tabla donde un dato es el VARRAYs</h4>
+					<img src="Fotos/ORAcle colecion2.JPG">
+			
+		 </article>
 
 	</section>
 
